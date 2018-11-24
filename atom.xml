@@ -38,28 +38,6 @@
   </entry>
   
   <entry>
-    <title>第一篇测试文章</title>
-    <link href="http://zikunfucc.com/undefined/af180990.html"/>
-    <id>http://zikunfucc.com/undefined/af180990.html</id>
-    <published>2018-11-16T06:16:30.000Z</published>
-    <updated>2018-11-17T09:28:06.432Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里是第一块文字区域</p><h2 id="首标题"><a href="#首标题" class="headerlink" title="首标题"></a>首标题</h2><h3 id="次级标题"><a href="#次级标题" class="headerlink" title="次级标题"></a>次级标题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo add .</span><br></pre></td></tr></table></figure><p>More info:<a href="https://www.baidu.com" target="_blank" rel="noopener">url</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这里是第一块文字区域&lt;/p&gt;
-&lt;h2 id=&quot;首标题&quot;&gt;&lt;a href=&quot;#首标题&quot; class=&quot;headerlink&quot; title=&quot;首标题&quot;&gt;&lt;/a&gt;首标题&lt;/h2&gt;&lt;h3 id=&quot;次级标题&quot;&gt;&lt;a href=&quot;#次级标题&quot; class=&quot;headerlink&quot; ti
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="http://zikunfucc.com/undefined/4a17b156.html"/>
     <id>http://zikunfucc.com/undefined/4a17b156.html</id>
