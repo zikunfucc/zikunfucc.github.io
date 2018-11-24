@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo-next主题博客自定义配置Fork me on github]]></title>
+    <url>%2Fundefined%2Fb2257057.html</url>
+    <content type="text"><![CDATA[在左上角或右上角实现fork me on github效果如下：首先我们可以选择在GitHub Ribbons或GitHub Corners选择一款你喜欢的挂饰，拷贝方框内的代码：将复制的代码，添加到MySelfBlog/themes/next/layout/_layout.swig 文件中，添加位置在1&lt;div class="headband"&gt;&lt;/div&gt; 如图:注意：要将自己github 的网址填写在对应位置:1&lt;a href="你的Github网址" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 例如:1&lt;a href="https://github.com/zikunfucc" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 自定义挂饰的部分样式样式源码示例:1&lt;svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"&gt; 修改挂饰的大小:1width="80" height="80" 修改挂饰的颜色:1style="fill:#222; color:#fff; 修改挂饰的位置（左方或者右方）:左方:1left: 0; 右方:1right: 0; 在修改了挂饰的位置后，可能还相应的需要修改挂饰的旋转方向:头朝左方:1transform:scale(-1,1); 头朝右方:1删去transform:scale(-1,1); 如果读者有什么其他样式的修改可以告诉我，我将不定期修改，让大家能获得一个更为完善的博客配置文章。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo-next主题博客博文插入图片]]></title>
     <url>%2Fundefined%2Fce47f76.html</url>
     <content type="text"><![CDATA[博文插入图片外部引用将需要插入文章的图片上传到某个图床上,例如新浪微博图床，得到这张图片的外链，例如 外链示例1http://wx3.sinaimg.cn/large/006zoO1wgy1fxjjq11udrj30go0aewfn.jpg 然后我们将这个保存了的外链实例,以markdown编辑语法写入博文中:1![图片标题](外链) 就可以得到最终效果。 内部引用（本地导入）方法一（安装相关插件）：修改博客配置文件参数在MySelfBlog/_config.yml文件中使用Ctrl+F查找post_asset_folder参数，如果显示的是post_asset_folder: false,那么我们就修改为1post_asset_folder: true 这样设置后，当你创建新博文时，Hexo会自动创建一个与博文同名且带上日期的文件夹，我们需要将该文章的所有资源（图片）全部放到那个文件夹里，这样我们就可以很方便的利用这些资源。 下载使用插件在博客根目录下通过命令行（终端），例如MySelfBlog目录，执行1npm install hexo-asset-image --save 正确引用方式在我们的博文中，如果你的博客已经是Hexo3以上版本的话，那么不能使用一般的1![图片标题](内部路径) 这样的markdown语法来引用图片和其他资源，这样可能会导致显示不正确，如下：所以正确的引用方法应该是：1&#123;% asset_img 你的图片.jpg 图片标题 %｝ 展示效果: 方法二(本地创建文件夹)在MySelfBlog/source 文件夹下创建一个images 文件夹，将你需要放置的图片放置在该文件夹下，然后调用1![星辰大海](/images/星辰大海.jpg) 效果如下：]]></content>
