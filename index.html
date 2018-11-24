@@ -33,6 +33,12 @@
 
 
 
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.css">
+
 
 
 
@@ -122,7 +128,7 @@
 <meta name="keywords" content="keywords">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZiKunFuCc&#39;s Blogs">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://zikunfucc.com/index.html">
 <meta property="og:site_name" content="ZiKunFuCc&#39;s Blogs">
 <meta property="og:description" content="description">
 <meta property="og:locale" content="zh-CN">
@@ -132,10 +138,12 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="ZiKunFuCc's Blogs" type="application/atom+xml">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+
+  <link rel="canonical" href="http://zikunfucc.com/">
 
 
 
@@ -430,7 +438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/undefined/af180990.html">
+    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/undefined/af180990.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zikunfucc">
@@ -450,7 +458,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/undefined/af180990.html" class="post-title-link" itemprop="http://yoursite.com/index.html">第一篇测试文章</a>
+                <a href="/undefined/af180990.html" class="post-title-link" itemprop="http://zikunfucc.com/index.html">第一篇测试文章</a>
               
             
           </h1>
@@ -546,6 +554,10 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
     
 
     
@@ -590,7 +602,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/undefined/4a17b156.html">
+    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/undefined/4a17b156.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zikunfucc">
@@ -610,7 +622,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/undefined/4a17b156.html" class="post-title-link" itemprop="http://yoursite.com/index.html">Hello World</a>
+                <a href="/undefined/4a17b156.html" class="post-title-link" itemprop="http://zikunfucc.com/index.html">Hello World</a>
               
             
           </h1>
@@ -652,7 +664,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-17 17:28:06" itemprop="dateModified" datetime="2018-11-17T17:28:06+08:00">2018-11-17</time>
+                <time title="修改时间：2018-11-24 13:36:37" itemprop="dateModified" datetime="2018-11-24T13:36:37+08:00">2018-11-24</time>
               
             
           </span>
@@ -707,6 +719,10 @@
     
     
     
+
+    <div>
+      
+    </div>
 
     <div>
       
@@ -796,6 +812,13 @@
             </nav>
           
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -939,6 +962,12 @@
       </div>
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 	
     
@@ -1369,6 +1398,41 @@
 
   
   
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
 
   
 
@@ -1387,5 +1451,8 @@
   <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
   <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/click.js"></script>
+  
 </body>
 </html>
