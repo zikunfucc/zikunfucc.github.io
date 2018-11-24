@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo-next主题博客背景修改]]></title>
+    <url>%2Fundefined%2F9bf7a4e1.html</url>
+    <content type="text"><![CDATA[添加背景图博客路径MySelfBlog/themes/next/source/css/_custom/custom.styl找到对应的custom.styl文件，修改添加1234567body&#123; background:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center;&#125; url括号中的 (/images/bg.jpg) 对应着你所需要放置的背景图片，路径形式是相对于 themes/next/source 为根目录的路径，例如我的背景图片放置在 themes/next/source/images/bg1.png ,那么我对应的就是上面的路径，根据你们自己的路径填写正确即可。 其他区域相应修改(不一定需要，看个人)以上修改成功后，可能发现就像下面这样那么这个时候我们肯定是不能忍受的，那么我的选择是将文章板块，以及下方的评论系统的背景色调修改成原先的白色底色，这样才能获得一个单独修改背景图片的博客页面。修改的部分在我们原先的路径,themes/next/source/css/_custom/custom.styl处修改为：1234567891011121314151617181920212223@media screen and (min-width:1200px) &#123; // 添加背景图 body &#123; background-image:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center; &#125; // 修改文章的背景色和透明度 .post &#123; background: #fff; opacity: 0.9; &#125; // 修改评论系统的背景色和透明度 .comments &#123; background: #fff; opacity: 0.9; &#125; &#125; 这样修改完了，我们就能看到博客页面成功的恢复成了我们所期望的样子，如下: 如果读者发现自己的博客修改后还有部分板块颜色被背景色同化，那么可以自己F12或者在那个板块下审查元素，寻找对应板块的名称，自己去在custom.styl文件中设置该区域的背景色。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[第一篇测试文章]]></title>
     <url>%2Fundefined%2Faf180990.html</url>
     <content type="text"><![CDATA[这里是第一块文字区域 首标题次级标题1$ hexo add . More info:url]]></content>

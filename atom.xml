@@ -6,15 +6,36 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zikunfucc.com/"/>
-  <updated>2018-11-17T09:28:06.432Z</updated>
+  <updated>2018-11-24T14:06:59.036Z</updated>
   <id>http://zikunfucc.com/</id>
   
   <author>
-    <name>zikunfucc</name>
+    <name>星河 || zikunfucc</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-next主题博客背景修改</title>
+    <link href="http://zikunfucc.com/undefined/9bf7a4e1.html"/>
+    <id>http://zikunfucc.com/undefined/9bf7a4e1.html</id>
+    <published>2018-11-24T11:33:17.000Z</published>
+    <updated>2018-11-24T14:06:59.036Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h4><p>博客路径<strong>MySelfBlog/themes/next/source/css/_custom/custom.styl</strong>找到对应的custom.styl文件，修改添加<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(/images/bg1.png);</span><br><span class="line">    <span class="attribute">background-size</span>:cover;</span><br><span class="line">    <span class="attribute">background-repeat</span>:no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">    <span class="attribute">background-position</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>url括号中的 <strong>(/images/bg.jpg)</strong> 对应着你所需要放置的背景图片，路径形式是相对于 <strong>themes/next/source</strong> 为根目录的路径，例如我的背景图片放置在 <strong>themes/next/source/images/bg1.png</strong> ,那么我对应的就是上面的路径，根据你们自己的路径填写正确即可。</p><h4 id="其他区域相应修改-不一定需要，看个人"><a href="#其他区域相应修改-不一定需要，看个人" class="headerlink" title="其他区域相应修改(不一定需要，看个人)"></a>其他区域相应修改(不一定需要，看个人)</h4><p>以上修改成功后，可能发现就像下面这样<br><img src="/undefined/9bf7a4e1/background1.png" title="丑陋的博客"><br>那么这个时候我们肯定是不能忍受的，那么我的选择是将文章板块，以及下方的评论系统的背景色调修改成原先的白色底色，这样才能获得一个单独修改背景图片的博客页面。修改的部分在我们原先的路径,<strong>themes/next/source/css/_custom/custom.styl</strong>处修改为：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">1200px</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加背景图</span></span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background-image</span>:url(/images/bg1.png);</span><br><span class="line">      <span class="attribute">background-size</span>:cover;</span><br><span class="line">      <span class="attribute">background-repeat</span>:no-repeat;</span><br><span class="line">      <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">      <span class="attribute">background-position</span>:center;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 修改文章的背景色和透明度</span></span><br><span class="line">  <span class="selector-class">.post</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 修改评论系统的背景色和透明度</span></span><br><span class="line">  <span class="selector-class">.comments</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p><p> 这样修改完了，我们就能看到博客页面成功的恢复成了我们所期望的样子，如下:<br> <img src="/undefined/9bf7a4e1/background2.png" title="美化的博客"><br> 如果读者发现自己的博客修改后还有部分板块颜色被背景色同化，那么可以自己F12或者在那个板块下审查元素，寻找对应板块的名称，自己去在custom.styl文件中设置该区域的背景色。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;添加背景图&quot;&gt;&lt;a href=&quot;#添加背景图&quot; class=&quot;headerlink&quot; title=&quot;添加背景图&quot;&gt;&lt;/a&gt;添加背景图&lt;/h4&gt;&lt;p&gt;博客路径&lt;strong&gt;MySelfBlog/themes/next/source/css/_custom/cust
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>第一篇测试文章</title>
