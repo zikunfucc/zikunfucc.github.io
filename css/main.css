@@ -1948,7 +1948,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7125;
+  background: #a25570;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2976,13 +2976,10 @@ hr {
 @media screen and (min-width: 1200px) {
   body {
     background-image: url("/images/bg1.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 50% 50%;
-    background-size: cover;
-  }
-  #footer a {
-    color: #eee;
+    background-position: center;
   }
   .post {
     background: #fff;

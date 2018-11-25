@@ -4,16 +4,37 @@
     <title><![CDATA[Hexo-next主题博客自定义配置Fork me on github]]></title>
     <url>%2Fundefined%2Fb2257057.html</url>
     <content type="text"><![CDATA[在左上角或右上角实现fork me on github效果如下：首先我们可以选择在GitHub Ribbons或GitHub Corners选择一款你喜欢的挂饰，拷贝方框内的代码：将复制的代码，添加到MySelfBlog/themes/next/layout/_layout.swig 文件中，添加位置在1&lt;div class="headband"&gt;&lt;/div&gt; 如图:注意：要将自己github 的网址填写在对应位置:1&lt;a href="你的Github网址" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 例如:1&lt;a href="https://github.com/zikunfucc" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 自定义挂饰的部分样式样式源码示例:1&lt;svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"&gt; 修改挂饰的大小:1width="80" height="80" 修改挂饰的颜色:1style="fill:#222; color:#fff; 修改挂饰的位置（左方或者右方）:左方:1left: 0; 右方:1right: 0; 在修改了挂饰的位置后，可能还相应的需要修改挂饰的旋转方向:头朝左方:1transform:scale(-1,1); 头朝右方:1删去transform:scale(-1,1); 如果读者有什么其他样式的修改可以告诉我，我将不定期修改，让大家能获得一个更为完善的博客配置文章。]]></content>
+      <categories>
+        <category>hexo-next配置</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo主题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客博文插入图片]]></title>
     <url>%2Fundefined%2Fce47f76.html</url>
     <content type="text"><![CDATA[博文插入图片外部引用将需要插入文章的图片上传到某个图床上,例如新浪微博图床，得到这张图片的外链，例如 外链示例1http://wx3.sinaimg.cn/large/006zoO1wgy1fxjjq11udrj30go0aewfn.jpg 然后我们将这个保存了的外链实例,以markdown编辑语法写入博文中:1![图片标题](外链) 就可以得到最终效果。 内部引用（本地导入）方法一（安装相关插件）：修改博客配置文件参数在MySelfBlog/_config.yml文件中使用Ctrl+F查找post_asset_folder参数，如果显示的是post_asset_folder: false,那么我们就修改为1post_asset_folder: true 这样设置后，当你创建新博文时，Hexo会自动创建一个与博文同名且带上日期的文件夹，我们需要将该文章的所有资源（图片）全部放到那个文件夹里，这样我们就可以很方便的利用这些资源。 下载使用插件在博客根目录下通过命令行（终端），例如MySelfBlog目录，执行1npm install hexo-asset-image --save 正确引用方式在我们的博文中，如果你的博客已经是Hexo3以上版本的话，那么不能使用一般的1![图片标题](内部路径) 这样的markdown语法来引用图片和其他资源，这样可能会导致显示不正确，如下：所以正确的引用方法应该是：1&#123;% asset_img 你的图片.jpg 图片标题 %｝ 展示效果: 方法二(本地创建文件夹)在MySelfBlog/source 文件夹下创建一个images 文件夹，将你需要放置的图片放置在该文件夹下，然后调用1![星辰大海](/images/星辰大海.jpg) 效果如下：]]></content>
+      <categories>
+        <category>hexo-next配置</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo主题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客背景修改]]></title>
     <url>%2Fundefined%2F9bf7a4e1.html</url>
     <content type="text"><![CDATA[添加背景图博客路径MySelfBlog/themes/next/source/css/_custom/custom.styl找到对应的custom.styl文件，修改添加1234567body&#123; background:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center;&#125; url括号中的 (/images/bg.jpg) 对应着你所需要放置的背景图片，路径形式是相对于 themes/next/source 为根目录的路径，例如我的背景图片放置在 themes/next/source/images/bg1.png ,那么我对应的就是上面的路径，根据你们自己的路径填写正确即可。 其他区域相应修改(不一定需要，看个人)以上修改成功后，可能发现就像下面这样那么这个时候我们肯定是不能忍受的，那么我的选择是将文章板块，以及下方的评论系统的背景色调修改成原先的白色底色，这样才能获得一个单独修改背景图片的博客页面。修改的部分在我们原先的路径,themes/next/source/css/_custom/custom.styl处修改为：1234567891011121314151617181920212223@media screen and (min-width:1200px) &#123; // 添加背景图 body &#123; background-image:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center; &#125; // 修改文章的背景色和透明度 .post &#123; background: #fff; opacity: 0.9; &#125; // 修改评论系统的背景色和透明度 .comments &#123; background: #fff; opacity: 0.9; &#125; &#125; 这样修改完了，我们就能看到博客页面成功的恢复成了我们所期望的样子，如下: 如果读者发现自己的博客修改后还有部分板块颜色被背景色同化，那么可以自己F12或者在那个板块下审查元素，寻找对应板块的名称，自己去在custom.styl文件中设置该区域的背景色。]]></content>
+      <categories>
+        <category>hexo-next配置</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo主题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
