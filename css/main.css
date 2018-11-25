@@ -1,3 +1,7 @@
+.post-body a {
+  color: #428bca;
+  font-weight: bold;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1948,7 +1952,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a25570;
+  background: #12a2ff;
 }
 .links-of-blogroll {
   font-size: 13px;
