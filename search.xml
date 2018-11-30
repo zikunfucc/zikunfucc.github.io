@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android开发(1)-输出字符并修改字体大小和颜色]]></title>
+    <url>%2Fundefined%2F1792901c.html</url>
+    <content type="text"><![CDATA[实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android中建议引用全局变量，将我们所需要内容写在strings.xml文件内，通过以下方式进行赋值。然后我们在activity_main.xml文件下,通过1android: text="@string/author_id_name" 来实现对文本内容的赋值。 修改控件字体颜色同样，我们也可以使用这种方法来对文本内容的颜色进行修改，在colors.xml文件下，添加对应的颜色变量，例如：我们选择了红色red，然后在activity_main.xml文件下使用1android:textColor="@color/red" 来设置文本内容的字体颜色。 修改控件字体大小后面呢，我们可以对字体的大小也进行修改，这里我们设置为30sp（按照官方文档最好使用sp）。 实验结果:最后，我们Run “app”就可以在虚拟机上看到所需要的学号,中英文名字显示在屏幕的中央了。]]></content>
+      <categories>
+        <category>Android开发</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo-next主题博客自定义设置标签页面的标签样式]]></title>
     <url>%2Fundefined%2F1ca6df66.html</url>
     <content type="text"><![CDATA[修改标签样式一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个class类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：标签对应的样式：由于这些标签的样式都是内联样式，所以我们就无法通过自定义样式表来修改这些标签的样式，因为内联样式的优先级是大于外联样式的，所以即使我们自定义样式，这些标签样式也不会被修改。那么我们为了修改这些标签的样式，只能去寻找这些标签的生成代码，然后在生成代码里修改样式。我们审查元素，发现上级class是post-body,然后我们到页面生成文件page.swig中寻找，该文件位置MySelfBlog/themes/next/layout/page.swig,找到PAGE BODY代码块，很快就发现了我们的目标：找到了罪魁祸首，那么我们就只需要按自己的需要修改对应的参数就哦啦，我最终修改为：123&lt;div class="tag-cloud-tags"&gt; &#123;&#123; tagcloud(&#123;min_font: 20, max_font: 30, amount: 300, color: true, start_color: '#555', end_color: '#111'&#125;) &#125;&#125;&lt;/div&gt; 效果对比：原样式：最终样式:个人感觉还是好看了点，不是吗？0.0]]></content>
