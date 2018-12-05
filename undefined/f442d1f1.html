@@ -124,18 +124,20 @@
 
 
 
-  <meta name="description" content="我们的征程是星辰大海！">
-<meta name="keywords" content="机器学习，数据分析，爬虫技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://zikunfucc.com/tags/index.html">
+  <meta name="description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
+<meta name="keywords" content="编程语言,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA-codePoint和length的区别">
+<meta property="og:url" content="http://zikunfucc.com/undefined/f442d1f1.html">
 <meta property="og:site_name" content="ZiKunFuCc&#39;s Blogs">
-<meta property="og:description" content="我们的征程是星辰大海！">
+<meta property="og:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T04:38:19.212Z">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
+<meta property="og:updated_time" content="2018-12-05T09:01:08.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="我们的征程是星辰大海！">
+<meta name="twitter:title" content="JAVA-codePoint和length的区别">
+<meta name="twitter:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
 
 
 
@@ -144,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://zikunfucc.com/tags/">
+  <link rel="canonical" href="http://zikunfucc.com/undefined/f442d1f1.html">
 
 
 
@@ -154,7 +156,7 @@
   };
 </script>
 
-  <title>标签 | ZiKunFuCc's Blogs</title>
+  <title>JAVA-codePoint和length的区别 | ZiKunFuCc's Blogs</title>
   
 
 
@@ -313,7 +315,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -377,25 +379,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -443,72 +426,270 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/undefined/f442d1f1.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="星河 || zikunfucc">
+      <meta itemprop="description" content="我们的征程是星辰大海！">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZiKunFuCc's Blogs">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                目前共计 5 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Android/" style="font-size: 20px; color: #555">Android</a> <a href="/tags/Java/" style="font-size: 20px; color: #555">Java</a> <a href="/tags/hexo主题/" style="font-size: 30px; color: #111">hexo主题</a> <a href="/tags/前端/" style="font-size: 30px; color: #111">前端</a> <a href="/tags/编程语言/" style="font-size: 25px; color: #333">编程语言</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">JAVA-codePoint和length的区别
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-03 09:51:56" itemprop="dateCreated datePublished" datetime="2018-12-03T09:51:56+08:00">2018-12-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-05 17:01:08" itemprop="dateModified" datetime="2018-12-05T17:01:08+08:00">2018-12-05</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java开发/" itemprop="url" rel="index"><span itemprop="name">Java开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h6 id="原理差异"><a href="#原理差异" class="headerlink" title="原理差异:"></a>原理差异:</h6><p><strong>length()</strong> 方法返回的String字符串对应<strong>UTF-16编码</strong>需要的代码单元数量，但JAVA用的<strong>Unicode字符集</strong>并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要<strong>一个</strong>代码单元就可以表示，但是对于一部分的特殊字符需要<strong>两个</strong>代码单元才能成功表示。  </p>
+<p><strong>codePointCount()</strong> 方法，通过<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">"Hello world"</span>;</span><br><span class="line"><span class="built_in">int</span> strLength = <span class="built_in">str</span>.codePointCount(<span class="number">0</span>, <span class="built_in">str</span>.length()) <span class="comment">// 返回字符串长度</span></span><br></pre></td></tr></table></figure></p>
+<p>方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。  </p>
+<p>所以通俗来讲，就是说<strong>length()</strong> 是实际上电脑中以<strong>UTF-16编码存储的字符个数</strong>。而<strong>codePointCount()</strong> 方法返回的是<strong>我们认为的字符串长度，是实际上的字符个数</strong>。</p>
+<h6 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试:"></a>代码测试:</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">codepoint</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;</span><br><span class="line">        String str2 = <span class="string">"\uD835\uDD68"</span>;</span><br><span class="line">        <span class="keyword">int</span> n1 = str1.length();</span><br><span class="line">        <span class="keyword">int</span> n2 = str1.codePointCount(<span class="number">0</span>, n1);</span><br><span class="line">        <span class="keyword">int</span> n3 = str2.length();</span><br><span class="line">        <span class="keyword">int</span> n4 = str2.codePointCount(<span class="number">0</span>, n3);</span><br><span class="line">        System.out.println(<span class="string">"String1:"</span> + str1);</span><br><span class="line">        System.out.println(<span class="string">"String1.length() return:"</span> + n1);</span><br><span class="line">        System.out .println(<span class="string">"String1.Codepointcount() return:"</span> + n2);</span><br><span class="line">        System.out.println(<span class="string">"String2:"</span> + str2);</span><br><span class="line">        System.out.println(<span class="string">"String2.length() return:"</span> + n3);</span><br><span class="line">        System.out .println(<span class="string">"String2.Codepointcount() return:"</span> + n4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果:"></a>测试结果:</h6><p><img src="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg" alt="效果"></p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+      
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/undefined/f442d1f1.html">JAVA-codePoint和length的区别</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 星河 || zikunfucc 的个人博客">星河 || zikunfucc</a></p>
+  <p><span>发布时间:</span>2018年12月03日 - 09:51</p>
+  <p><span>最后更新:</span>2018年12月05日 - 17:01</p>
+  <p><span>原始链接:</span><a href="/undefined/f442d1f1.html" title="JAVA-codePoint和length的区别">http://zikunfucc.com/undefined/f442d1f1.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zikunfucc.com/undefined/f442d1f1.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/编程语言/" rel="tag"># 编程语言</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/undefined/1792901c.html" rel="next" title="Android开发(1)-输出字符并修改字体大小和颜色">
+                <i class="fa fa-chevron-left"></i> Android开发(1)-输出字符并修改字体大小和颜色
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -538,8 +719,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -676,6 +866,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#原理差异"><span class="nav-number">1.</span> <span class="nav-text">原理差异:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#代码测试"><span class="nav-number">2.</span> <span class="nav-text">代码测试:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#测试结果"><span class="nav-number">3.</span> <span class="nav-text">测试结果:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

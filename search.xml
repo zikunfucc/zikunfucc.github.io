@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JAVA-codePoint和length的区别]]></title>
+    <url>%2Fundefined%2Ff442d1f1.html</url>
+    <content type="text"><![CDATA[原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。 codePointCount() 方法，通过12String str = "Hello world";int strLength = str.codePointCount(0, str.length()) // 返回字符串长度 方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。 所以通俗来讲，就是说length() 是实际上电脑中以UTF-16编码存储的字符个数。而codePointCount() 方法返回的是我们认为的字符串长度，是实际上的字符个数。 代码测试:12345678910111213141516public class codepoint &#123; public static void main(String[] args)&#123; String str1 = "hello"; String str2 = "\uD835\uDD68"; int n1 = str1.length(); int n2 = str1.codePointCount(0, n1); int n3 = str2.length(); int n4 = str2.codePointCount(0, n3); System.out.println("String1:" + str1); System.out.println("String1.length() return:" + n1); System.out .println("String1.Codepointcount() return:" + n2); System.out.println("String2:" + str2); System.out.println("String2.length() return:" + n3); System.out .println("String2.Codepointcount() return:" + n4); &#125;&#125; 测试结果:]]></content>
+      <categories>
+        <category>Java开发</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android开发(1)-输出字符并修改字体大小和颜色]]></title>
     <url>%2Fundefined%2F1792901c.html</url>
     <content type="text"><![CDATA[实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android中建议引用全局变量，将我们所需要内容写在strings.xml文件内，通过以下方式进行赋值。然后我们在activity_main.xml文件下,通过1android: text="@string/author_id_name" 来实现对文本内容的赋值。 修改控件字体颜色同样，我们也可以使用这种方法来对文本内容的颜色进行修改，在colors.xml文件下，添加对应的颜色变量，例如：我们选择了红色red，然后在activity_main.xml文件下使用1android:textColor="@color/red" 来设置文本内容的字体颜色。 修改控件字体大小后面呢，我们可以对字体的大小也进行修改，这里我们设置为30sp（按照官方文档最好使用sp）。 实验结果:最后，我们Run “app”就可以在虚拟机上看到所需要的学号,中英文名字显示在屏幕的中央了。]]></content>

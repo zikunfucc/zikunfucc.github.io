@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zikunfucc.com/"/>
-  <updated>2018-11-30T14:03:52.621Z</updated>
+  <updated>2018-12-05T09:01:08.373Z</updated>
   <id>http://zikunfucc.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA-codePoint和length的区别</title>
+    <link href="http://zikunfucc.com/undefined/f442d1f1.html"/>
+    <id>http://zikunfucc.com/undefined/f442d1f1.html</id>
+    <published>2018-12-03T01:51:56.000Z</published>
+    <updated>2018-12-05T09:01:08.373Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="原理差异"><a href="#原理差异" class="headerlink" title="原理差异:"></a>原理差异:</h6><p><strong>length()</strong> 方法返回的String字符串对应<strong>UTF-16编码</strong>需要的代码单元数量，但JAVA用的<strong>Unicode字符集</strong>并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要<strong>一个</strong>代码单元就可以表示，但是对于一部分的特殊字符需要<strong>两个</strong>代码单元才能成功表示。  </p><p><strong>codePointCount()</strong> 方法，通过<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">"Hello world"</span>;</span><br><span class="line"><span class="built_in">int</span> strLength = <span class="built_in">str</span>.codePointCount(<span class="number">0</span>, <span class="built_in">str</span>.length()) <span class="comment">// 返回字符串长度</span></span><br></pre></td></tr></table></figure></p><p>方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。  </p><p>所以通俗来讲，就是说<strong>length()</strong> 是实际上电脑中以<strong>UTF-16编码存储的字符个数</strong>。而<strong>codePointCount()</strong> 方法返回的是<strong>我们认为的字符串长度，是实际上的字符个数</strong>。</p><h6 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试:"></a>代码测试:</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">codepoint</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;</span><br><span class="line">        String str2 = <span class="string">"\uD835\uDD68"</span>;</span><br><span class="line">        <span class="keyword">int</span> n1 = str1.length();</span><br><span class="line">        <span class="keyword">int</span> n2 = str1.codePointCount(<span class="number">0</span>, n1);</span><br><span class="line">        <span class="keyword">int</span> n3 = str2.length();</span><br><span class="line">        <span class="keyword">int</span> n4 = str2.codePointCount(<span class="number">0</span>, n3);</span><br><span class="line">        System.out.println(<span class="string">"String1:"</span> + str1);</span><br><span class="line">        System.out.println(<span class="string">"String1.length() return:"</span> + n1);</span><br><span class="line">        System.out .println(<span class="string">"String1.Codepointcount() return:"</span> + n2);</span><br><span class="line">        System.out.println(<span class="string">"String2:"</span> + str2);</span><br><span class="line">        System.out.println(<span class="string">"String2.length() return:"</span> + n3);</span><br><span class="line">        System.out .println(<span class="string">"String2.Codepointcount() return:"</span> + n4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h6 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果:"></a>测试结果:</h6><p><img src="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg" alt="效果"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h6 id=&quot;原理差异&quot;&gt;&lt;a href=&quot;#原理差异&quot; class=&quot;headerlink&quot; title=&quot;原理差异:&quot;&gt;&lt;/a&gt;原理差异:&lt;/h6&gt;&lt;p&gt;&lt;strong&gt;length()&lt;/strong&gt; 方法返回的String字符串对应&lt;strong&gt;UTF-16编码&lt;/
+      
+    
+    </summary>
+    
+      <category term="Java开发" scheme="http://zikunfucc.com/categories/Java%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="编程语言" scheme="http://zikunfucc.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://zikunfucc.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Android开发(1)-输出字符并修改字体大小和颜色</title>
