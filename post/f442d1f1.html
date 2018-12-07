@@ -124,23 +124,20 @@
 
 
 
-  <meta name="description" content="修改标签样式一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个class类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：标签对应的样式：由于这些标签的样式都是内联样式，所">
-<meta name="keywords" content="前端,hexo主题">
+  <meta name="description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
+<meta name="keywords" content="编程语言,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-next主题博客自定义设置标签页面的标签样式">
-<meta property="og:url" content="http://zikunfucc.com/undefined/1ca6df66.html">
+<meta property="og:title" content="JAVA-codePoint和length的区别">
+<meta property="og:url" content="http://zikunfucc.com/post/f442d1f1.html">
 <meta property="og:site_name" content="ZiKunFuCc&#39;s Blogs">
-<meta property="og:description" content="修改标签样式一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个class类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：标签对应的样式：由于这些标签的样式都是内联样式，所">
+<meta property="og:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxkel6tub6j30gs06jq3i.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxkew9m4i1j30q40b1gme.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fxkegf7bk8j30d107eq39.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fxkf16jpx6j30hk09h750.jpg">
-<meta property="og:updated_time" content="2018-11-25T09:03:56.312Z">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
+<meta property="og:updated_time" content="2018-12-05T09:22:02.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-next主题博客自定义设置标签页面的标签样式">
-<meta name="twitter:description" content="修改标签样式一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个class类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：标签对应的样式：由于这些标签的样式都是内联样式，所">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxkel6tub6j30gs06jq3i.jpg">
+<meta name="twitter:title" content="JAVA-codePoint和length的区别">
+<meta name="twitter:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
 
 
 
@@ -149,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://zikunfucc.com/undefined/1ca6df66.html">
+  <link rel="canonical" href="http://zikunfucc.com/post/f442d1f1.html">
 
 
 
@@ -159,7 +156,7 @@
   };
 </script>
 
-  <title>Hexo-next主题博客自定义设置标签页面的标签样式 | ZiKunFuCc's Blogs</title>
+  <title>JAVA-codePoint和length的区别 | ZiKunFuCc's Blogs</title>
   
 
 
@@ -443,7 +440,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/undefined/1ca6df66.html">
+    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/post/f442d1f1.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="星河 || zikunfucc">
@@ -460,7 +457,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo-next主题博客自定义设置标签页面的标签样式
+          <h1 class="post-title" itemprop="name headline">JAVA-codePoint和length的区别
               
             
           </h1>
@@ -485,12 +482,24 @@
                 
               
 
-              <time title="创建时间：2018-11-25 16:33:35 / 修改时间：17:03:56" itemprop="dateCreated datePublished" datetime="2018-11-25T16:33:35+08:00">2018-11-25</time>
+              <time title="创建时间：2018-12-03 09:51:56" itemprop="dateCreated datePublished" datetime="2018-12-03T09:51:56+08:00">2018-12-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-05 17:22:02" itemprop="dateModified" datetime="2018-12-05T17:22:02+08:00">2018-12-05</time>
               
             
           </span>
@@ -507,7 +516,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo-next配置/" itemprop="url" rel="index"><span itemprop="name">hexo-next配置</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java开发/" itemprop="url" rel="index"><span itemprop="name">Java开发</span></a></span>
 
                 
                 
@@ -548,8 +557,13 @@
       
 
       
-        <h5 id="修改标签样式"><a href="#修改标签样式" class="headerlink" title="修改标签样式"></a>修改标签样式</h5><p>一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个<strong>class</strong>类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：<br><strong>标签对应的样式：</strong><br><img src="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxkel6tub6j30gs06jq3i.jpg" alt="样式"><br>由于这些标签的样式都是内联样式，所以我们就无法通过自定义样式表来修改这些标签的样式，因为<strong>内联样式的优先级是大于外联样式</strong>的，所以即使我们自定义样式，这些标签样式也不会被修改。那么我们为了修改这些标签的样式，只能去寻找这些标签的生成代码，然后在生成代码里修改样式。<br>我们审查元素，发现上级<strong>class</strong>是<strong>post-body</strong>,然后我们到<strong>页面生成文件page.swig</strong>中寻找，该文件位置<strong>MySelfBlog/themes/next/layout/page.swig</strong>,找到<strong>PAGE BODY</strong>代码块，很快就发现了我们的目标：<br><img src="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxkew9m4i1j30q40b1gme.jpg" alt="代码"><br>找到了罪魁祸首，那么我们就只需要按自己的需要修改对应的参数就哦啦，我最终修改为：<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="class"><span class="keyword">class</span>="<span class="title">tag</span>-<span class="title">cloud</span>-<span class="title">tags</span>"&gt;</span></span><br><span class="line"><span class="class">     </span>&#123;&#123; tagcloud(&#123;min_font: <span class="number">20</span>, max_font: <span class="number">30</span>, amount: <span class="number">300</span>, color: <span class="keyword">true</span>, start_color: <span class="string">'#555'</span>, end_color: <span class="string">'#111'</span>&#125;) &#125;&#125;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果对比：<br><strong>原样式：</strong><br><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fxkegf7bk8j30d107eq39.jpg" alt="原样式"><br><strong>最终样式:</strong><br><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fxkf16jpx6j30hk09h750.jpg" alt="最终样式"><br>个人感觉还是好看了点，不是吗？0.0</p>
+        <h4 id="原理差异"><a href="#原理差异" class="headerlink" title="原理差异:"></a>原理差异:</h4><p><strong>length()</strong> 方法返回的String字符串对应<strong>UTF-16编码</strong>需要的代码单元数量，但JAVA用的<strong>Unicode字符集</strong>并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要<strong>一个</strong>代码单元就可以表示，但是对于一部分的特殊字符需要<strong>两个</strong>代码单元才能成功表示。  </p>
+<p><strong>codePointCount()</strong> 方法，通过<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">"Hello world"</span>;</span><br><span class="line"><span class="built_in">int</span> strLength = <span class="built_in">str</span>.codePointCount(<span class="number">0</span>, <span class="built_in">str</span>.length()) <span class="comment">// 返回字符串长度</span></span><br></pre></td></tr></table></figure></p>
+<p>方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。  </p>
+<p>所以通俗来讲，就是说<strong>length()</strong> 是实际上电脑中以<strong>UTF-16编码存储的字符个数</strong>。而<strong>codePointCount()</strong> 方法返回的是<strong>我们认为的字符串长度，是实际上的字符个数</strong>。  </p>
+<h4 id="附带codePointCount-方法的解析"><a href="#附带codePointCount-方法的解析" class="headerlink" title="附带codePointCount()方法的解析:"></a>附带codePointCount()方法的解析:</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointCount</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span></span><br><span class="line"><span class="function"><span class="comment">// beginIndex	-- 这是该在文本范围的第一个字符索引。</span></span></span><br><span class="line"><span class="function"><span class="comment">// endIndex	-- 这是文本范围的最后一个字符之后的索引。</span></span></span><br><span class="line"><span class="function"><span class="comment">// 相当于对于字符串String[beginIndex, endIndex-1]求解码点数量</span></span></span><br><span class="line"><span class="function"><span class="comment">// 也可以认为是对于[beginIndex, endIndex)左闭右开范围的字符数目</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试:"></a>代码测试:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">codepoint</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;</span><br><span class="line">        String str2 = <span class="string">"\uD835\uDD68"</span>;</span><br><span class="line">        <span class="keyword">int</span> n1 = str1.length();</span><br><span class="line">        <span class="keyword">int</span> n2 = str1.codePointCount(<span class="number">0</span>, n1);</span><br><span class="line">        <span class="keyword">int</span> n3 = str2.length();</span><br><span class="line">        <span class="keyword">int</span> n4 = str2.codePointCount(<span class="number">0</span>, n3);</span><br><span class="line">        System.out.println(<span class="string">"String1:"</span> + str1);</span><br><span class="line">        System.out.println(<span class="string">"String1.length() return:"</span> + n1);</span><br><span class="line">        System.out .println(<span class="string">"String1.Codepointcount() return:"</span> + n2);</span><br><span class="line">        System.out.println(<span class="string">"String2:"</span> + str2);</span><br><span class="line">        System.out.println(<span class="string">"String2.length() return:"</span> + n3);</span><br><span class="line">        System.out .println(<span class="string">"String2.Codepointcount() return:"</span> + n4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果:"></a>测试结果:</h4><p><img src="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg" alt="效果"></p>
 
       
     </div>
@@ -579,12 +593,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/undefined/1ca6df66.html">Hexo-next主题博客自定义设置标签页面的标签样式</a></p>
+  <p><span>本文标题:</span><a href="/post/f442d1f1.html">JAVA-codePoint和length的区别</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 星河 || zikunfucc 的个人博客">星河 || zikunfucc</a></p>
-  <p><span>发布时间:</span>2018年11月25日 - 16:33</p>
-  <p><span>最后更新:</span>2018年11月25日 - 17:03</p>
-  <p><span>原始链接:</span><a href="/undefined/1ca6df66.html" title="Hexo-next主题博客自定义设置标签页面的标签样式">http://zikunfucc.com/undefined/1ca6df66.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zikunfucc.com/undefined/1ca6df66.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年12月03日 - 09:51</p>
+  <p><span>最后更新:</span>2018年12月05日 - 17:22</p>
+  <p><span>原始链接:</span><a href="/post/f442d1f1.html" title="JAVA-codePoint和length的区别">http://zikunfucc.com/post/f442d1f1.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zikunfucc.com/post/f442d1f1.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -618,9 +632,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/编程语言/" rel="tag"># 编程语言</a>
           
-            <a href="/tags/hexo主题/" rel="tag"># hexo主题</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -653,8 +667,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/a0fe0969.html" rel="next" title="Hexo-next主题博客添加分类，标签页以及自定义样式">
-                <i class="fa fa-chevron-left"></i> Hexo-next主题博客添加分类，标签页以及自定义样式
+              <a href="/post/1792901c.html" rel="next" title="Android开发(1)-输出字符并修改字体大小和颜色">
+                <i class="fa fa-chevron-left"></i> Android开发(1)-输出字符并修改字体大小和颜色
               </a>
             
           </div>
@@ -663,8 +677,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/undefined/1792901c.html" rel="prev" title="Android开发(1)-输出字符并修改字体大小和颜色">
-                Android开发(1)-输出字符并修改字体大小和颜色 <i class="fa fa-chevron-right"></i>
+              <a href="/post/933a9886.html" rel="prev" title="JAVA-输出数组元素的方法汇总">
+                JAVA-输出数组元素的方法汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -735,7 +749,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -867,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改标签样式"><span class="nav-number">1.</span> <span class="nav-text">修改标签样式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理差异"><span class="nav-number">1.</span> <span class="nav-text">原理差异:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附带codePointCount-方法的解析"><span class="nav-number">2.</span> <span class="nav-text">附带codePointCount()方法的解析:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码测试"><span class="nav-number">3.</span> <span class="nav-text">代码测试:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试结果"><span class="nav-number">4.</span> <span class="nav-text">测试结果:</span></a></li></ol></div>
             
 
           </div>

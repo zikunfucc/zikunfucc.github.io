@@ -124,20 +124,27 @@
 
 
 
-  <meta name="description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
-<meta name="keywords" content="编程语言,Java">
+  <meta name="description" content="实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android">
+<meta name="keywords" content="编程语言,Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA-codePoint和length的区别">
-<meta property="og:url" content="http://zikunfucc.com/undefined/f442d1f1.html">
+<meta property="og:title" content="Android开发(1)-输出字符并修改字体大小和颜色">
+<meta property="og:url" content="http://zikunfucc.com/post/1792901c.html">
 <meta property="og:site_name" content="ZiKunFuCc&#39;s Blogs">
-<meta property="og:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
+<meta property="og:description" content="实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
-<meta property="og:updated_time" content="2018-12-05T09:01:08.373Z">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fxqeo3kekkj30fc01rq2x.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxqer41chdj308y02e743.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqesb2v23j30da03cdfr.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxqevniw2mj30d50743yq.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fxqey8bajvj30aj04gdfv.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqey8npq7j30d20770sy.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqey933boj30b10640sw.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/small/006zoO1wgy1fxqf4dy8gvj30u01hc3zo.jpg">
+<meta property="og:updated_time" content="2018-11-30T14:03:52.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA-codePoint和length的区别">
-<meta name="twitter:description" content="原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。   codePointCount() 方法，通过12String str = &quot;Hello world&quot;;">
-<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg">
+<meta name="twitter:title" content="Android开发(1)-输出字符并修改字体大小和颜色">
+<meta name="twitter:description" content="实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fxqeo3kekkj30fc01rq2x.jpg">
 
 
 
@@ -146,7 +153,7 @@
 
 
 
-  <link rel="canonical" href="http://zikunfucc.com/undefined/f442d1f1.html">
+  <link rel="canonical" href="http://zikunfucc.com/post/1792901c.html">
 
 
 
@@ -156,7 +163,7 @@
   };
 </script>
 
-  <title>JAVA-codePoint和length的区别 | ZiKunFuCc's Blogs</title>
+  <title>Android开发(1)-输出字符并修改字体大小和颜色 | ZiKunFuCc's Blogs</title>
   
 
 
@@ -440,7 +447,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/undefined/f442d1f1.html">
+    <link itemprop="mainEntityOfPage" href="http://zikunfucc.com/post/1792901c.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="星河 || zikunfucc">
@@ -457,7 +464,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVA-codePoint和length的区别
+          <h1 class="post-title" itemprop="name headline">Android开发(1)-输出字符并修改字体大小和颜色
               
             
           </h1>
@@ -482,24 +489,12 @@
                 
               
 
-              <time title="创建时间：2018-12-03 09:51:56" itemprop="dateCreated datePublished" datetime="2018-12-03T09:51:56+08:00">2018-12-03</time>
+              <time title="创建时间：2018-11-30 21:51:07 / 修改时间：22:03:52" itemprop="dateCreated datePublished" datetime="2018-11-30T21:51:07+08:00">2018-11-30</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-05 17:01:08" itemprop="dateModified" datetime="2018-12-05T17:01:08+08:00">2018-12-05</time>
               
             
           </span>
@@ -516,7 +511,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java开发/" itemprop="url" rel="index"><span itemprop="name">Java开发</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android开发/" itemprop="url" rel="index"><span itemprop="name">Android开发</span></a></span>
 
                 
                 
@@ -557,12 +552,14 @@
       
 
       
-        <h6 id="原理差异"><a href="#原理差异" class="headerlink" title="原理差异:"></a>原理差异:</h6><p><strong>length()</strong> 方法返回的String字符串对应<strong>UTF-16编码</strong>需要的代码单元数量，但JAVA用的<strong>Unicode字符集</strong>并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要<strong>一个</strong>代码单元就可以表示，但是对于一部分的特殊字符需要<strong>两个</strong>代码单元才能成功表示。  </p>
-<p><strong>codePointCount()</strong> 方法，通过<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">"Hello world"</span>;</span><br><span class="line"><span class="built_in">int</span> strLength = <span class="built_in">str</span>.codePointCount(<span class="number">0</span>, <span class="built_in">str</span>.length()) <span class="comment">// 返回字符串长度</span></span><br></pre></td></tr></table></figure></p>
-<p>方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。  </p>
-<p>所以通俗来讲，就是说<strong>length()</strong> 是实际上电脑中以<strong>UTF-16编码存储的字符个数</strong>。而<strong>codePointCount()</strong> 方法返回的是<strong>我们认为的字符串长度，是实际上的字符个数</strong>。</p>
-<h6 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试:"></a>代码测试:</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">codepoint</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;</span><br><span class="line">        String str2 = <span class="string">"\uD835\uDD68"</span>;</span><br><span class="line">        <span class="keyword">int</span> n1 = str1.length();</span><br><span class="line">        <span class="keyword">int</span> n2 = str1.codePointCount(<span class="number">0</span>, n1);</span><br><span class="line">        <span class="keyword">int</span> n3 = str2.length();</span><br><span class="line">        <span class="keyword">int</span> n4 = str2.codePointCount(<span class="number">0</span>, n3);</span><br><span class="line">        System.out.println(<span class="string">"String1:"</span> + str1);</span><br><span class="line">        System.out.println(<span class="string">"String1.length() return:"</span> + n1);</span><br><span class="line">        System.out .println(<span class="string">"String1.Codepointcount() return:"</span> + n2);</span><br><span class="line">        System.out.println(<span class="string">"String2:"</span> + str2);</span><br><span class="line">        System.out.println(<span class="string">"String2.length() return:"</span> + n3);</span><br><span class="line">        System.out .println(<span class="string">"String2.Codepointcount() return:"</span> + n4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果:"></a>测试结果:</h6><p><img src="http://wx1.sinaimg.cn/mw690/006zoO1wly1fxvyzwrtozj308k05yt8o.jpg" alt="效果"></p>
+        <h4 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a>实验要求：</h4><p>在Android Studio虚拟机的屏幕上输出学号和中英文名。</p>
+<h4 id="实验过程："><a href="#实验过程：" class="headerlink" title="实验过程："></a>实验过程：</h4><h5 id="赋值给控件文本内容"><a href="#赋值给控件文本内容" class="headerlink" title="赋值给控件文本内容"></a>赋值给控件文本内容</h5><h6 id="粗暴方法："><a href="#粗暴方法：" class="headerlink" title="粗暴方法："></a>粗暴方法：</h6><p>定位到<strong>activity_main.xml</strong>文件下，修改<strong>android:text属性为16121198-符子坤-zikunfu</strong>，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。<br><img src="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fxqeo3kekkj30fc01rq2x.jpg" alt="警告"></p>
+<h6 id="可行方法"><a href="#可行方法" class="headerlink" title="可行方法:"></a>可行方法:</h6><p><strong>解决方案：</strong>在Android中建议引用全局变量，将我们所需要内容写在<strong>strings.xml</strong>文件内，通过以下方式进行赋值。<br><img src="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxqer41chdj308y02e743.jpg" alt="文件位置"><br><img src="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqesb2v23j30da03cdfr.jpg" alt="语法格式"><br>然后我们在<strong>activity_main.xml</strong>文件下,通过<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android: <span class="built_in">text</span>=<span class="string">"@string/author_id_name"</span></span><br></pre></td></tr></table></figure></p>
+<p>来实现对文本内容的赋值。<br><img src="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fxqevniw2mj30d50743yq.jpg" alt="语法"></p>
+<h5 id="修改控件字体颜色"><a href="#修改控件字体颜色" class="headerlink" title="修改控件字体颜色"></a>修改控件字体颜色</h5><p>同样，我们也可以使用这种方法来对文本内容的颜色进行修改，在<strong>colors.xml</strong>文件下，添加对应的颜色变量，例如：<br><img src="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fxqey8bajvj30aj04gdfv.jpg" alt="颜色"><br>我们选择了红色red，然后在<strong>activity_main.xml</strong>文件下使用<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">android:</span>textColor=<span class="string">"@color/red"</span></span><br></pre></td></tr></table></figure></p>
+<p>来设置文本内容的字体颜色。<br><img src="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqey8npq7j30d20770sy.jpg" alt="颜色"></p>
+<h5 id="修改控件字体大小"><a href="#修改控件字体大小" class="headerlink" title="修改控件字体大小"></a>修改控件字体大小</h5><p>后面呢，我们可以对字体的大小也进行修改，这里我们设置为<strong>30sp（按照官方文档最好使用sp）</strong>。<br><img src="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fxqey933boj30b10640sw.jpg" alt="大小"></p>
+<h4 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果:"></a>实验结果:</h4><p>最后，我们<strong>Run “app”</strong>就可以在虚拟机上看到所需要的学号,中英文名字显示在屏幕的中央了。<br><img src="http://wx3.sinaimg.cn/small/006zoO1wgy1fxqf4dy8gvj30u01hc3zo.jpg" alt="结果"></p>
 
       
     </div>
@@ -592,12 +589,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/undefined/f442d1f1.html">JAVA-codePoint和length的区别</a></p>
+  <p><span>本文标题:</span><a href="/post/1792901c.html">Android开发(1)-输出字符并修改字体大小和颜色</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 星河 || zikunfucc 的个人博客">星河 || zikunfucc</a></p>
-  <p><span>发布时间:</span>2018年12月03日 - 09:51</p>
-  <p><span>最后更新:</span>2018年12月05日 - 17:01</p>
-  <p><span>原始链接:</span><a href="/undefined/f442d1f1.html" title="JAVA-codePoint和length的区别">http://zikunfucc.com/undefined/f442d1f1.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zikunfucc.com/undefined/f442d1f1.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月30日 - 21:51</p>
+  <p><span>最后更新:</span>2018年11月30日 - 22:03</p>
+  <p><span>原始链接:</span><a href="/post/1792901c.html" title="Android开发(1)-输出字符并修改字体大小和颜色">http://zikunfucc.com/post/1792901c.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zikunfucc.com/post/1792901c.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -633,7 +630,7 @@
           
             <a href="/tags/编程语言/" rel="tag"># 编程语言</a>
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -666,8 +663,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/1792901c.html" rel="next" title="Android开发(1)-输出字符并修改字体大小和颜色">
-                <i class="fa fa-chevron-left"></i> Android开发(1)-输出字符并修改字体大小和颜色
+              <a href="/post/1ca6df66.html" rel="next" title="Hexo-next主题博客自定义设置标签页面的标签样式">
+                <i class="fa fa-chevron-left"></i> Hexo-next主题博客自定义设置标签页面的标签样式
               </a>
             
           </div>
@@ -675,6 +672,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/f442d1f1.html" rel="prev" title="JAVA-codePoint和length的区别">
+                JAVA-codePoint和length的区别 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -744,7 +745,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -876,7 +877,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#原理差异"><span class="nav-number">1.</span> <span class="nav-text">原理差异:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#代码测试"><span class="nav-number">2.</span> <span class="nav-text">代码测试:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#测试结果"><span class="nav-number">3.</span> <span class="nav-text">测试结果:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验要求："><span class="nav-number">1.</span> <span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验过程："><span class="nav-number">2.</span> <span class="nav-text">实验过程：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#赋值给控件文本内容"><span class="nav-number">2.1.</span> <span class="nav-text">赋值给控件文本内容</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#粗暴方法："><span class="nav-number">2.1.1.</span> <span class="nav-text">粗暴方法：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#可行方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">可行方法:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改控件字体颜色"><span class="nav-number">2.2.</span> <span class="nav-text">修改控件字体颜色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改控件字体大小"><span class="nav-number">2.3.</span> <span class="nav-text">修改控件字体大小</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验结果"><span class="nav-number">3.</span> <span class="nav-text">实验结果:</span></a></li></ol></div>
             
 
           </div>
