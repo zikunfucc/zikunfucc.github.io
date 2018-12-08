@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[JAVA-输出数组元素的方法汇总]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2F933a9886.html</url>
+    <url>%2Fpost%2F933a9886.html</url>
     <content type="text"><![CDATA[输出数组元素:一般来说，我们可以通过for循环遍历元素输出所有元素，但是在java中我们有更多的方法来达到我们的目的。比如说封装的Arrays类就可以很好的帮助我们处理数组的输出问题,也可以通过for-each来缩短代码量,甚至我们可以选择通过Java的泛型来自己写一个适合大多数数据对象的输出函数。总的来说，归纳有以下几种方法: 一维数组:定义变量：1234int[] array1 = &#123;1, 2, 3&#125;;char[] array2 = &#123;'你', '我', '他'&#125;;Integer[] intArray = &#123;1, 2, 3&#125;;Character[] charArray = &#123;'你', '我', '他'&#125;; (1)for循环12345678for (int i = 0; i &lt; array1.length; i++) &#123; System.out.print(array1[i] + " ");&#125;System.out.println();for (int i = 0; i &lt; array2.length; i++) &#123; System.out.print(array2[i] + " ");&#125;System.out.println(); 结果截图: (2)for-each循环12345678for (int i : array1) &#123; System.out.print(i + " ");&#125;System.out.println();for (char i : array2) &#123; System.out.print(i + " ");&#125;System.out.println(); 结果截图: (3)利用Arrays类的toString方法12System.out.println(Arrays.toString(array1));System.out.println(Arrays.toString(array2)); 结果截图: (4)利用泛型自己写一个输出函数123456789printArray(intArray); // 输出函数printArray(charArray); // 输出函数// 以下为自定义输出函数public static &lt;E&gt; void printArray(E[] inputArray)&#123; for(E element : inputArray) &#123; System.out.printf("%s ", element); &#125; System.out.println();&#125; 结果截图: 二维数组(多维数组):定义变量:1234int[][] array3 = &#123;&#123;1, 2&#125;, &#123;3, 4&#125;&#125;;char[][] array4 = &#123;&#123;'你', '我'&#125;, &#123;'他', '她'&#125;&#125;;Integer[][] intArray2 = &#123;&#123;1, 2&#125;, &#123;3, 4&#125;&#125;;Character[][] charArray2 = &#123;&#123;'你', '我'&#125;, &#123;'他', '她'&#125;&#125;; (1)for循环12345678910111213System.out.println("第一种方法(for循环):");for(int i = 0; i &lt; array3.length; i++)&#123; for(int j = 0; j &lt; array3[i].length; j++)&#123; System.out.print(array3[i][j] + " "); &#125; System.out.println();&#125;for(int i = 0; i &lt; array4.length; i++)&#123; for(int j = 0; j &lt; array4[i].length; j++)&#123; System.out.print(array4[i][j] + " "); &#125; System.out.println();&#125; 结果截图: (2)for-each循环123456789101112for(int[] i : array3)&#123; for(int j : i)&#123; System.out.print(j + " "); &#125; System.out.println();&#125;for(char[] i : array4)&#123; for(char j : i)&#123; System.out.print(j + " "); &#125; System.out.println();&#125; 结果截图: (3)利用Arrays类的deepToString方法12System.out.println(Arrays.deepToString(array3));System.out.println(Arrays.deepToString(array4)); 结果截图: (4)利用泛型自己写一个输出函数1234567891011printArray2(intArray2); // 输出函数printArray2(charArray2); // 输出函数// 以下为自定义输出函数public static &lt;E&gt; void printArray2(E[][] inputArray)&#123; for(E[] element1 : inputArray)&#123; for(E element2 : element1)&#123; System.out.printf("%s ", element2); &#125; System.out.println(); &#125;&#125; 结果截图: 测试代码:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586import java.util.Arrays;public class out_array &#123; public static void main(String[] args) &#123; int[] array1 = &#123;1, 2, 3&#125;; char[] array2 = &#123;'你', '我', '他'&#125;; int[][] array3 = &#123;&#123;1, 2&#125;, &#123;3, 4&#125;&#125;; char[][] array4 = &#123;&#123;'你', '我'&#125;, &#123;'他', '她'&#125;&#125;; Integer[] intArray = &#123;1, 2, 3&#125;; Character[] charArray = &#123;'你', '我', '他'&#125;; Integer[][] intArray2 = &#123;&#123;1, 2&#125;, &#123;3, 4&#125;&#125;; Character[][] charArray2 = &#123;&#123;'你', '我'&#125;, &#123;'他', '她'&#125;&#125;; System.out.println("一维数组输出:"); System.out.println("第一种方法(for循环):"); for (int i = 0; i &lt; array1.length; i++) &#123; System.out.print(array1[i] + " "); &#125; System.out.println(); for (int i = 0; i &lt; array2.length; i++) &#123; System.out.print(array2[i] + " "); &#125; System.out.println(); System.out.println("第二种方法(for-each循环)"); for (int i : array1) &#123; System.out.print(i + " "); &#125; System.out.println(); for (char i : array2) &#123; System.out.print(i + " "); &#125; System.out.println(); System.out.println("第三种方法(利用Arrays类的toString方法):"); System.out.println(Arrays.toString(array1)); System.out.println(Arrays.toString(array2)); System.out.println("第四种方法(利用泛型自己写一个输出函数):"); printArray(intArray); printArray(charArray); System.out.println("二维数组输出方法:"); System.out.println("第一种方法(for循环):"); for(int i = 0; i &lt; array3.length; i++)&#123; for(int j = 0; j &lt; array3[i].length; j++)&#123; System.out.print(array3[i][j] + " "); &#125; System.out.println(); &#125; for(int i = 0; i &lt; array4.length; i++)&#123; for(int j = 0; j &lt; array4[i].length; j++)&#123; System.out.print(array4[i][j] + " "); &#125; System.out.println(); &#125; System.out.println("第二种方法(for-each循环:"); for(int[] i : array3)&#123; for(int j : i)&#123; System.out.print(j + " "); &#125; System.out.println(); &#125; for(char[] i : array4)&#123; for(char j : i)&#123; System.out.print(j + " "); &#125; System.out.println(); &#125; System.out.println("第三种方法(利用Arrays类的deepToString方法):"); System.out.println(Arrays.deepToString(array3)); System.out.println(Arrays.deepToString(array4)); System.out.println("第四种方法(利用泛型自己写一个输出函数):"); printArray2(intArray2); printArray2(charArray2); &#125; public static &lt;E&gt; void printArray(E[] inputArray)&#123; for(E element : inputArray) &#123; System.out.printf("%s ", element); &#125; System.out.println(); &#125; public static &lt;E&gt; void printArray2(E[][] inputArray)&#123; for(E[] element1 : inputArray)&#123; for(E element2 : element1)&#123; System.out.printf("%s ", element2); &#125; System.out.println(); &#125; &#125;&#125; 总体结果:一维数组: 二维数组（多维数组）:]]></content>
       <categories>
         <category>Java开发</category>
@@ -14,7 +14,7 @@
   </entry>
   <entry>
     <title><![CDATA[JAVA-codePoint和length的区别]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2Ff442d1f1.html</url>
+    <url>%2Fpost%2Ff442d1f1.html</url>
     <content type="text"><![CDATA[原理差异:length() 方法返回的String字符串对应UTF-16编码需要的代码单元数量，但JAVA用的Unicode字符集并不能通过一个代码单元来代表所有的字符。对于大多数的常用Unicode字符可以仅需要一个代码单元就可以表示，但是对于一部分的特殊字符需要两个代码单元才能成功表示。 codePointCount() 方法，通过12String str = "Hello world";int strLength = str.codePointCount(0, str.length()) // 返回字符串长度 方法的调用，我们可以得到码点数量，也就是实际意义上的字符串长度。 所以通俗来讲，就是说length() 是实际上电脑中以UTF-16编码存储的字符个数。而codePointCount() 方法返回的是我们认为的字符串长度，是实际上的字符个数。 附带codePointCount()方法的解析:12345public int codePointCount(int beginIndex, int endIndex)// beginIndex -- 这是该在文本范围的第一个字符索引。// endIndex -- 这是文本范围的最后一个字符之后的索引。// 相当于对于字符串String[beginIndex, endIndex-1]求解码点数量// 也可以认为是对于[beginIndex, endIndex)左闭右开范围的字符数目 代码测试:12345678910111213141516public class codepoint &#123; public static void main(String[] args)&#123; String str1 = "hello"; String str2 = "\uD835\uDD68"; int n1 = str1.length(); int n2 = str1.codePointCount(0, n1); int n3 = str2.length(); int n4 = str2.codePointCount(0, n3); System.out.println("String1:" + str1); System.out.println("String1.length() return:" + n1); System.out .println("String1.Codepointcount() return:" + n2); System.out.println("String2:" + str2); System.out.println("String2.length() return:" + n3); System.out .println("String2.Codepointcount() return:" + n4); &#125;&#125; 测试结果:]]></content>
       <categories>
         <category>Java开发</category>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[Android开发(1)-输出字符并修改字体大小和颜色]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2F1792901c.html</url>
+    <url>%2Fpost%2F1792901c.html</url>
     <content type="text"><![CDATA[实验要求：在Android Studio虚拟机的屏幕上输出学号和中英文名。 实验过程：赋值给控件文本内容粗暴方法：定位到activity_main.xml文件下，修改android:text属性为16121198-符子坤-zikunfu，但是呢，我们会发现出现了一定的问题，如图，我们获得了一个警告，这个警告在这个情况下代表着我们可能是直接对控件内容进行了赋值。 可行方法:解决方案：在Android中建议引用全局变量，将我们所需要内容写在strings.xml文件内，通过以下方式进行赋值。然后我们在activity_main.xml文件下,通过1android: text="@string/author_id_name" 来实现对文本内容的赋值。 修改控件字体颜色同样，我们也可以使用这种方法来对文本内容的颜色进行修改，在colors.xml文件下，添加对应的颜色变量，例如：我们选择了红色red，然后在activity_main.xml文件下使用1android:textColor="@color/red" 来设置文本内容的字体颜色。 修改控件字体大小后面呢，我们可以对字体的大小也进行修改，这里我们设置为30sp（按照官方文档最好使用sp）。 实验结果:最后，我们Run “app”就可以在虚拟机上看到所需要的学号,中英文名字显示在屏幕的中央了。]]></content>
       <categories>
         <category>Android开发</category>
@@ -38,7 +38,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客自定义设置标签页面的标签样式]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2F1ca6df66.html</url>
+    <url>%2Fpost%2F1ca6df66.html</url>
     <content type="text"><![CDATA[修改标签样式一直感觉标签页的这个标签样式非常难看，又小又灰，换了背景图之后显得连看都看不清楚了，所以我就打算去自己修改一下这个样式，让他变的和谐起来。不过呢，在这个修改的过程中发现了这个东东竟然修改起来很麻烦，它不是由一个class类别属性，分配到某一个预定义的类别上的，也就是说它不是外联样式（CSS外联样式表设定），而是内联样式决定其样式。如图：标签对应的样式：由于这些标签的样式都是内联样式，所以我们就无法通过自定义样式表来修改这些标签的样式，因为内联样式的优先级是大于外联样式的，所以即使我们自定义样式，这些标签样式也不会被修改。那么我们为了修改这些标签的样式，只能去寻找这些标签的生成代码，然后在生成代码里修改样式。我们审查元素，发现上级class是post-body,然后我们到页面生成文件page.swig中寻找，该文件位置MySelfBlog/themes/next/layout/page.swig,找到PAGE BODY代码块，很快就发现了我们的目标：找到了罪魁祸首，那么我们就只需要按自己的需要修改对应的参数就哦啦，我最终修改为：123&lt;div class="tag-cloud-tags"&gt; &#123;&#123; tagcloud(&#123;min_font: 20, max_font: 30, amount: 300, color: true, start_color: '#555', end_color: '#111'&#125;) &#125;&#125;&lt;/div&gt; 效果对比：原样式：最终样式:个人感觉还是好看了点，不是吗？0.0]]></content>
       <categories>
         <category>hexo-next配置</category>
@@ -50,7 +50,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客添加分类，标签页以及自定义样式]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2Fa0fe0969.html</url>
+    <url>%2Fpost%2Fa0fe0969.html</url>
     <content type="text"><![CDATA[添加分类选项创建分类页并添加“type”属性通过命令行或者终端定位到博客所在根目录，例如MySelfBlog/ ,执行命令:1hexo new page categories 创建分类页，成功后提示：1INFO Created: ***\MySelfBlog\source\categories\index.md 根据上面的路径找到对应的index.md 文件，打开后默认内容应该是：1234---title: categoriesdate: 2018-11-25 13:47:40--- 如果我们希望分类页的标题显示为中文的分类，那么我们可以修改将title: categories 修改为title: 分类。接着我们需要修改这个文件，最终为：12345---title: 分类date: 2018-11-25 13:47:40type: "categories"--- 最后保存文件。 给文章添加“categories”属性，划分类别将需要分类的文章添加categories属性。例如：123456---title: Hexo-next主题博客博文插入图片date: 2018-11-24 22:22:31categories:- hexo-next配置--- 这样这篇文章就归类为hexo-next配置类别了。注意：hexo规定一篇文章只能属于一个分类，如果categories下方出现两个属性（例如：hexo-next配置；图片插入），那么hexo不会将这篇文章归为两个分类，而是将分类嵌套，这篇文章将属于hexo-next配置下的图片插入分类。这样我们就可以从分类页面上看到我们设置了的博文。效果如下: 添加标签选项创建标签页并添加“type”属性通过命令行或者终端定位到博客所在根目录，例如MySelfBlog/ ,执行命令:1hexo new page tags 创建分类页，成功后提示：1INFO Created: ***\MySelfBlog\source\tags\index.md 根据上面的路径找到对应的index.md 文件，打开后默认内容应该是：1234---title: tagsdate: 2018-11-25 13:47:40--- 如果我们希望分类页的标题显示为中文的分类，那么我们可以修改将title: tags 修改为title: 标签。接着我们需要修改这个文件，最终为：12345---title: 标签date: 2018-11-25 13:47:40type: "tags"--- 最后保存文件。 给文章添加“tags”属性，划分类别将需要分类的文章添加categories属性。例如：1234567---title: Hexo-next主题博客博文插入图片date: 2018-11-24 22:22:31tags:- 前端- hexo主题--- 这样这篇文章就有前端和hexo主题两个标签了。效果如下: 设置创建博文时自动添加分类以及标签选项hexo主题创建博文时默认是没有分类以及标签选项的，所以我们如果要给文章添加分类和标签属性的时候，可能会需要先创建一篇博文，然后去博文的md文件中自己添加这两个属性，这样比较麻烦。所以呢，我们可以通过设置默认的文章模版内容来简化这个操作。 修改post.md文件我们打开MySelfBlog/scaffolds/post.md文件（文章模版文件），修改成：123456---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:categories:--- 保存文件后，我们以后创建新文章的时候，页面里就会自动生成分类和标签项了，我们只需要写入对应的类别和标签就OK了，当然你也可以在这个模版页面自己添加一些自己的需求。]]></content>
       <categories>
         <category>hexo-next配置</category>
@@ -62,7 +62,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客自定义配置Fork me on github]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2Fb2257057.html</url>
+    <url>%2Fpost%2Fb2257057.html</url>
     <content type="text"><![CDATA[在左上角或右上角实现fork me on github效果如下：首先我们可以选择在GitHub Ribbons或GitHub Corners选择一款你喜欢的挂饰，拷贝方框内的代码：将复制的代码，添加到MySelfBlog/themes/next/layout/_layout.swig 文件中，添加位置在1&lt;div class="headband"&gt;&lt;/div&gt; 如图:注意：要将自己github 的网址填写在对应位置:1&lt;a href="你的Github网址" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 例如:1&lt;a href="https://github.com/zikunfucc" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"&gt; 自定义挂饰的部分样式样式源码示例:1&lt;svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"&gt; 修改挂饰的大小:1width="80" height="80" 修改挂饰的颜色:1style="fill:#222; color:#fff; 修改挂饰的位置（左方或者右方）:左方:1left: 0; 右方:1right: 0; 在修改了挂饰的位置后，可能还相应的需要修改挂饰的旋转方向:头朝左方:1transform:scale(-1,1); 头朝右方:1删去transform:scale(-1,1); 如果读者有什么其他样式的修改可以告诉我，我将不定期修改，让大家能获得一个更为完善的博客配置文章。]]></content>
       <categories>
         <category>hexo-next配置</category>
@@ -74,7 +74,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客博文插入图片]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2Fce47f76.html</url>
+    <url>%2Fpost%2Fce47f76.html</url>
     <content type="text"><![CDATA[博文插入图片外部引用将需要插入文章的图片上传到某个图床上,例如新浪微博图床，得到这张图片的外链，例如 外链示例1http://wx3.sinaimg.cn/large/006zoO1wgy1fxjjq11udrj30go0aewfn.jpg 然后我们将这个保存了的外链实例,以markdown编辑语法写入博文中:1![图片标题](外链) 就可以得到最终效果。 内部引用（本地导入）方法一（安装相关插件）：修改博客配置文件参数在MySelfBlog/_config.yml文件中使用Ctrl+F查找post_asset_folder参数，如果显示的是post_asset_folder: false,那么我们就修改为1post_asset_folder: true 这样设置后，当你创建新博文时，Hexo会自动创建一个与博文同名且带上日期的文件夹，我们需要将该文章的所有资源（图片）全部放到那个文件夹里，这样我们就可以很方便的利用这些资源。 下载使用插件在博客根目录下通过命令行（终端），例如MySelfBlog目录，执行1npm install hexo-asset-image --save 正确引用方式在我们的博文中，如果你的博客已经是Hexo3以上版本的话，那么不能使用一般的1![图片标题](内部路径) 这样的markdown语法来引用图片和其他资源，这样可能会导致显示不正确，如下：所以正确的引用方法应该是：1&#123;% asset_img 你的图片.jpg 图片标题 %｝ 展示效果: 方法二(本地创建文件夹)在MySelfBlog/source 文件夹下创建一个images 文件夹，将你需要放置的图片放置在该文件夹下，然后调用1![星辰大海](/images/星辰大海.jpg) 效果如下：]]></content>
       <categories>
         <category>hexo-next配置</category>
@@ -86,7 +86,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo-next主题博客背景修改]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2F9bf7a4e1.html</url>
+    <url>%2Fpost%2F9bf7a4e1.html</url>
     <content type="text"><![CDATA[添加背景图博客路径MySelfBlog/themes/next/source/css/_custom/custom.styl找到对应的custom.styl文件，修改添加1234567body&#123; background:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center;&#125; url括号中的 (/images/bg.jpg) 对应着你所需要放置的背景图片，路径形式是相对于 themes/next/source 为根目录的路径，例如我的背景图片放置在 themes/next/source/images/bg1.png ,那么我对应的就是上面的路径，根据你们自己的路径填写正确即可。 其他区域相应修改(不一定需要，看个人)以上修改成功后，可能发现就像下面这样那么这个时候我们肯定是不能忍受的，那么我的选择是将文章板块，以及下方的评论系统的背景色调修改成原先的白色底色，这样才能获得一个单独修改背景图片的博客页面。修改的部分在我们原先的路径,themes/next/source/css/_custom/custom.styl处修改为：1234567891011121314151617181920212223@media screen and (min-width:1200px) &#123; // 添加背景图 body &#123; background-image:url(/images/bg1.png); background-size:cover; background-repeat:no-repeat; background-attachment:fixed; background-position:center; &#125; // 修改文章的背景色和透明度 .post &#123; background: #fff; opacity: 0.9; &#125; // 修改评论系统的背景色和透明度 .comments &#123; background: #fff; opacity: 0.9; &#125; &#125; 这样修改完了，我们就能看到博客页面成功的恢复成了我们所期望的样子，如下: 如果读者发现自己的博客修改后还有部分板块颜色被背景色同化，那么可以自己F12或者在那个板块下审查元素，寻找对应板块的名称，自己去在custom.styl文件中设置该区域的背景色。]]></content>
       <categories>
         <category>hexo-next配置</category>
@@ -98,7 +98,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2Fvar%2Fwww%2Fhexo%2Fpost%2F4a17b156.html</url>
+    <url>%2Fpost%2F4a17b156.html</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
