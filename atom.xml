@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zikunfu.cn/"/>
-  <updated>2018-12-09T15:34:55.759Z</updated>
+  <updated>2018-12-15T16:26:51.493Z</updated>
   <id>http://www.zikunfu.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-next主题博客控制评论系统特定页面存在</title>
+    <link href="http://www.zikunfu.cn/post/5da274e4.html"/>
+    <id>http://www.zikunfu.cn/post/5da274e4.html</id>
+    <published>2018-12-15T15:55:25.000Z</published>
+    <updated>2018-12-15T16:26:51.493Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="控制评论系统显示与隐藏"><a href="#控制评论系统显示与隐藏" class="headerlink" title="控制评论系统显示与隐藏"></a>控制评论系统显示与隐藏</h4><h5 id="hexo博客相关问题"><a href="#hexo博客相关问题" class="headerlink" title="hexo博客相关问题:"></a>hexo博客相关问题:</h5><p>大家在使用hexo部署博客的时候可能会发现，对于不同的页面，hexo并没有考虑分类页面，标签页面或者说是其他的页面是否需要评论系统的存在。个人感觉既然只是分类页面，标签页面，那么只起到一个汇总的作用，可能并不需要大家评论什么，而且在我的背景下，这个评论系统就显得非常多余，而且贼丑，所以能干（强迫症）的我选择去调整一下。</p><h5 id="hexo默认配置："><a href="#hexo默认配置：" class="headerlink" title="hexo默认配置："></a>hexo默认配置：</h5><p>我们的目的是让评论系统只存在于我们需要的页面，比如说文章页面。那么我们很自然的就会想到去修改相关的布局文件<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySelfBolg<span class="regexp">/themes/</span><span class="keyword">next</span><span class="regexp">/layout/</span>_layout.swig</span><br></pre></td></tr></table></figure></p><p>在基本布局中，我们直接搜索<strong>comments</strong>（Ctrl+F）,发现：<br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> content %&#125;</span><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">include</span></span> '_partials/comments.swig' %&#125;</span><span class="xml">// 划重点</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p><p>这就是告诉我们还得去看看这个<strong>comments.swig</strong>文件，看看这个评论系统的布局设置。<br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> page.comments %&#125;</span><span class="xml">// 划重点，这个是第一行的代码</span></span><br></pre></td></tr></table></figure></p><p>这个代表如果页面的comments属性为true，则选择渲染评论系统，那么我们就得想办法，让页面comments属性为false。  </p><h5 id="失败方案"><a href="#失败方案" class="headerlink" title="失败方案:"></a>失败方案:</h5><p>一开始我的想法是在<strong>_layout.swig</strong>基本布局文件中，设置if语句，判断如果页面是文章页面才选择渲染，但是一直报错，可能是我的语句有点问题，所以就没达到目的，后来我选择了上面说的那种设置页面属性的方法。如果有<strong>dalao</strong> 能在<strong>_layout.swig</strong> 用if语句达到过滤分类页面等的效果的话，希望能在下方留言，我看到会修改本篇文章，接下来讲讲修改属性的方法。</p><h5 id="成功方案"><a href="#成功方案" class="headerlink" title="成功方案:"></a>成功方案:</h5><p>我找到<strong>MySelfBlog/source/categories/index.md</strong> 文件，用<strong>Typora</strong> 编辑打开，发现<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">title:</span> 标签</span><br><span class="line"><span class="symbol">date:</span> <span class="number">2018</span><span class="number">-11</span><span class="number">-25</span> <span class="number">12</span>:<span class="number">37</span>:<span class="number">40</span></span><br><span class="line"><span class="symbol">type:</span> <span class="string">"tags"</span></span><br></pre></td></tr></table></figure></p><p>然后我们添加一条属性:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p><p>修改后如下:<br><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fy7w64vjtbj30lw0gaglw.jpg" alt=""><br>修改成功后，我们在git上<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br><span class="line">hexo start -debug</span><br></pre></td></tr></table></figure></p><p>修改成功!!!</p><h5 id="原本的样式"><a href="#原本的样式" class="headerlink" title="原本的样式:"></a>原本的样式:</h5><p><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fy7w63vt5oj30mr0hmq3e.jpg" alt=""></p><h5 id="修改后的样式"><a href="#修改后的样式" class="headerlink" title="修改后的样式:"></a>修改后的样式:</h5><p><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fy7w64fyuwj30m10cg74g.jpg" alt=""><br>是不是看上去和谐多了呢?0.0</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;控制评论系统显示与隐藏&quot;&gt;&lt;a href=&quot;#控制评论系统显示与隐藏&quot; class=&quot;headerlink&quot; title=&quot;控制评论系统显示与隐藏&quot;&gt;&lt;/a&gt;控制评论系统显示与隐藏&lt;/h4&gt;&lt;h5 id=&quot;hexo博客相关问题&quot;&gt;&lt;a href=&quot;#hexo博客相
+      
+    
+    </summary>
+    
+      <category term="hexo-next配置" scheme="http://www.zikunfu.cn/categories/hexo-next%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="前端" scheme="http://www.zikunfu.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="hexo主题" scheme="http://www.zikunfu.cn/tags/hexo%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>MongoDB最新安装详解与诸多问题处理</title>
