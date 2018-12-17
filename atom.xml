@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zikunfu.cn/"/>
-  <updated>2018-12-15T16:26:51.493Z</updated>
+  <updated>2018-12-17T13:20:00.811Z</updated>
   <id>http://www.zikunfu.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django导入本地CSS/JS文件</title>
+    <link href="http://www.zikunfu.cn/post/54a83838.html"/>
+    <id>http://www.zikunfu.cn/post/54a83838.html</id>
+    <published>2018-12-17T12:47:01.000Z</published>
+    <updated>2018-12-17T13:20:00.811Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Django-使用本地CSS-JS文件"><a href="#Django-使用本地CSS-JS文件" class="headerlink" title="Django 使用本地CSS / JS文件"></a>Django 使用本地CSS / JS文件</h4><p>之前一直在纠结Django的html文件如何引入本地CSS和JS，但是找了很多资料都没能成功，后来终于找到了一个新版本Django能使用的方法。</p><h5 id="创建一个static文件夹"><a href="#创建一个static文件夹" class="headerlink" title="创建一个static文件夹"></a>创建一个static文件夹</h5><p>在Django项目目录下，<strong>manage.py</strong> 同层级下创建一个名为 <strong>static</strong> 的文件夹，我们将CSS和JS甚至是Image等文件放到这个文件夹下。例如：</p><p><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fya1o4xdvvj30gi04ndfv.jpg" alt=""></p><h5 id="修改setting-py配置"><a href="#修改setting-py配置" class="headerlink" title="修改setting.py配置"></a>修改setting.py配置</h5><p>在末尾添加代码:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">HERE = os.path.dirname(os.path.abspath(__file__))</span><br><span class="line">HERE = os.path.join(HERE, <span class="string">'../'</span>)</span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">    <span class="comment"># Put strings here, like "/home/html/static" or "C:/www/django/static".</span></span><br><span class="line">    <span class="comment"># Always use forward slashes, even on Windows.</span></span><br><span class="line">    <span class="comment"># Don't forget to use absolute paths, not relative paths.</span></span><br><span class="line">    os.path.join(HERE, <span class="string">'static/'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>当然我们也可以修改存放JS/CSS的文件夹名称，此处就不多言了，dalao们自己去修改上面的那串代码吧。</p><p><strong>样例:</strong></p><p><img src="http://wx4.sinaimg.cn/mw690/006zoO1wgy1fya21zlhd8j30ii0753yr.jpg" alt=""></p><h5 id="导入方式"><a href="#导入方式" class="headerlink" title="导入方式"></a>导入方式</h5><p>我们在完成了上面的所有工作后，只需要在需要导入的位置以下面的方式导入就行。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"../static/css/style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"../static/js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>大功告成!0.0</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Django-使用本地CSS-JS文件&quot;&gt;&lt;a href=&quot;#Django-使用本地CSS-JS文件&quot; class=&quot;headerlink&quot; title=&quot;Django 使用本地CSS / JS文件&quot;&gt;&lt;/a&gt;Django 使用本地CSS / JS文件&lt;/h4&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="Django" scheme="http://www.zikunfu.cn/categories/Django/"/>
+    
+    
+      <category term="Django" scheme="http://www.zikunfu.cn/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-next主题博客控制评论系统特定页面存在</title>

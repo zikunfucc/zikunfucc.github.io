@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Django导入本地CSS/JS文件]]></title>
+    <url>%2Fpost%2F54a83838.html</url>
+    <content type="text"><![CDATA[Django 使用本地CSS / JS文件之前一直在纠结Django的html文件如何引入本地CSS和JS，但是找了很多资料都没能成功，后来终于找到了一个新版本Django能使用的方法。 创建一个static文件夹在Django项目目录下，manage.py 同层级下创建一个名为 static 的文件夹，我们将CSS和JS甚至是Image等文件放到这个文件夹下。例如： 修改setting.py配置在末尾添加代码: 123456789STATIC_URL = '/static/'HERE = os.path.dirname(os.path.abspath(__file__))HERE = os.path.join(HERE, '../')STATICFILES_DIRS = ( # Put strings here, like "/home/html/static" or "C:/www/django/static". # Always use forward slashes, even on Windows. # Don't forget to use absolute paths, not relative paths. os.path.join(HERE, 'static/'),) 当然我们也可以修改存放JS/CSS的文件夹名称，此处就不多言了，dalao们自己去修改上面的那串代码吧。 样例: 导入方式我们在完成了上面的所有工作后，只需要在需要导入的位置以下面的方式导入就行。 12&lt;link rel="stylesheet" type="text/css" href="../static/css/style.css"&gt;&lt;script type="text/javascript" src="../static/js/jquery.min.js"&gt;&lt;/script&gt; 大功告成!0.0]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo-next主题博客控制评论系统特定页面存在]]></title>
     <url>%2Fpost%2F5da274e4.html</url>
     <content type="text"><![CDATA[控制评论系统显示与隐藏hexo博客相关问题:大家在使用hexo部署博客的时候可能会发现，对于不同的页面，hexo并没有考虑分类页面，标签页面或者说是其他的页面是否需要评论系统的存在。个人感觉既然只是分类页面，标签页面，那么只起到一个汇总的作用，可能并不需要大家评论什么，而且在我的背景下，这个评论系统就显得非常多余，而且贼丑，所以能干（强迫症）的我选择去调整一下。 hexo默认配置：我们的目的是让评论系统只存在于我们需要的页面，比如说文章页面。那么我们很自然的就会想到去修改相关的布局文件1MySelfBolg/themes/next/layout/_layout.swig 在基本布局中，我们直接搜索comments（Ctrl+F）,发现：12345&lt;div id="content" class="content"&gt; &#123;% block content %&#125;&#123;% endblock %&#125;&lt;/div&gt;&#123;% include '_partials/comments.swig' %&#125; // 划重点&lt;/div&gt; 这就是告诉我们还得去看看这个comments.swig文件，看看这个评论系统的布局设置。1&#123;% if page.comments %&#125; // 划重点，这个是第一行的代码 这个代表如果页面的comments属性为true，则选择渲染评论系统，那么我们就得想办法，让页面comments属性为false。 失败方案:一开始我的想法是在_layout.swig基本布局文件中，设置if语句，判断如果页面是文章页面才选择渲染，但是一直报错，可能是我的语句有点问题，所以就没达到目的，后来我选择了上面说的那种设置页面属性的方法。如果有dalao 能在_layout.swig 用if语句达到过滤分类页面等的效果的话，希望能在下方留言，我看到会修改本篇文章，接下来讲讲修改属性的方法。 成功方案:我找到MySelfBlog/source/categories/index.md 文件，用Typora 编辑打开，发现123title: 标签date: 2018-11-25 12:37:40type: "tags" 然后我们添加一条属性:1comments: false 修改后如下:修改成功后，我们在git上12hexo generatehexo start -debug 修改成功!!! 原本的样式: 修改后的样式:是不是看上去和谐多了呢?0.0]]></content>
