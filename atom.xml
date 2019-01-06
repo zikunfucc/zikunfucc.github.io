@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zikunfu.cn/"/>
-  <updated>2018-12-27T13:23:48.456Z</updated>
+  <updated>2019-01-06T15:08:34.615Z</updated>
   <id>http://www.zikunfu.cn/</id>
   
   <author>
@@ -15,6 +15,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android开发-@id与@+id之间的区别</title>
+    <link href="http://www.zikunfu.cn/post/673e21fa.html"/>
+    <id>http://www.zikunfu.cn/post/673e21fa.html</id>
+    <published>2019-01-06T15:01:33.000Z</published>
+    <updated>2019-01-06T15:08:34.615Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h4><p>经常能看到布局里出现@id和@+id,但是不是很清楚之间的区别，然后就基本上使用@+id也能解决问题，所以一直没去搞清楚它们的差别，今天特意找了下，写篇文章记录下。</p><h4 id="解析"><a href="#解析" class="headerlink" title="解析:"></a>解析:</h4><p>@+id就是在R.java文件里新增一个id名称，如果之前已经存在相同的id名称，那么会覆盖之前的名称。<br>@id则是直接引用R.java文件的存在的id资源，如果不存在，会编译报错。 </p><h4 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h4><p>不建议在已存在某id的时候再在布局中使用@+id，虽然暂时这是被允许的，但是这种写法并不规范，在后续的android版本中可能被禁止这种写法。  </p><p>简单讲讲，其实在布局里，除了申明控件的id使用@+id/外，其余的引用控件最好使用@id，这样符合代码规范，也可以节约编译的时间，避免R.java文件无用的写入。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题:&quot;&gt;&lt;/a&gt;问题:&lt;/h4&gt;&lt;p&gt;经常能看到布局里出现@id和@+id,但是不是很清楚之间的区别，然后就基本上使用@+id也能解决问题，所以一直没去搞清楚它们的差别，今天
+      
+    
+    </summary>
+    
+      <category term="Android开发" scheme="http://www.zikunfu.cn/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="http://www.zikunfu.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android开发-使用xml中的array资源</title>
+    <link href="http://www.zikunfu.cn/post/f3ee8788.html"/>
+    <id>http://www.zikunfu.cn/post/f3ee8788.html</id>
+    <published>2019-01-06T14:53:29.000Z</published>
+    <updated>2019-01-06T14:59:26.757Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="创建array资源"><a href="#创建array资源" class="headerlink" title="创建array资源:"></a>创建array资源:</h4><p>在value目录下创建arrays.xml文件,然后我们在arrays.xml文件中使用string-array或者integer-array标签定义数组：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;<span class="built_in">string</span>-array <span class="built_in">name</span>=<span class="string">"citys"</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;上海&lt;/<span class="built_in">item</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;北京&lt;/<span class="built_in">item</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;成都&lt;/<span class="built_in">item</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;广州&lt;/<span class="built_in">item</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;深圳&lt;/<span class="built_in">item</span>&gt;</span><br><span class="line">    &lt;/<span class="built_in">string</span>-array&gt;</span><br><span class="line">  </span><br><span class="line">    &lt;<span class="built_in">integer</span>-array <span class="built_in">name</span>=<span class="string">"nums"</span> translatable=<span class="string">"false"</span>&gt;</span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;<span class="number">1</span>&lt;/<span class="built_in">item</span>&gt;   </span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;<span class="number">2</span>&lt;/<span class="built_in">item</span>&gt;  </span><br><span class="line">        &lt;<span class="built_in">item</span>&gt;<span class="number">3</span>&lt;/<span class="built_in">item</span>&gt;  </span><br><span class="line">    &lt;/<span class="built_in">integer</span>-array&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p><h4 id="引用array资源"><a href="#引用array资源" class="headerlink" title="引用array资源:"></a>引用array资源:</h4><h5 id="Java文件中引用"><a href="#Java文件中引用" class="headerlink" title="Java文件中引用:"></a>Java文件中引用:</h5><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Resources res =getResources();</span><br><span class="line"><span class="keyword">String</span>[] citys = res.getStringArray(R.<span class="keyword">array</span>.citys);</span><br><span class="line"><span class="keyword">String</span>[] nums = res.getIntArray(R.<span class="keyword">array</span>.nums);</span><br></pre></td></tr></table></figure><h5 id="Xml文件中引用"><a href="#Xml文件中引用" class="headerlink" title="Xml文件中引用:"></a>Xml文件中引用:</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Spinner</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">"@+id/spinner1"</span></span><br><span class="line">    android:<span class="attribute">layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    android:<span class="attribute">entries</span>=<span class="string">"@array/languages"</span></span><br><span class="line">  /&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;创建array资源&quot;&gt;&lt;a href=&quot;#创建array资源&quot; class=&quot;headerlink&quot; title=&quot;创建array资源:&quot;&gt;&lt;/a&gt;创建array资源:&lt;/h4&gt;&lt;p&gt;在value目录下创建arrays.xml文件,然后我们在arrays.xml文
+      
+    
+    </summary>
+    
+      <category term="Android开发" scheme="http://www.zikunfu.cn/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="http://www.zikunfu.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android开发-setTextColor的多种方法</title>
+    <link href="http://www.zikunfu.cn/post/a826ad8d.html"/>
+    <id>http://www.zikunfu.cn/post/a826ad8d.html</id>
+    <published>2019-01-06T14:42:45.000Z</published>
+    <updated>2019-01-06T14:51:25.514Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="方法汇总"><a href="#方法汇总" class="headerlink" title="方法汇总:"></a>方法汇总:</h4><p><strong>方法一:</strong><br>xml文件内直接设置属性<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;android:<span class="attribute">TextColor</span>=<span class="string">"#FFFFFF"</span>/&gt;</span><br></pre></td></tr></table></figure></p><p><strong>方法二:</strong><br>在java文件中引用控件，使用setTextColor方法<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textView</span><span class="selector-class">.setTextColor</span>(0<span class="selector-tag">xFFFFFF</span>);</span><br><span class="line"><span class="selector-tag">textView</span><span class="selector-class">.setTextColor</span>(<span class="selector-tag">Color</span><span class="selector-class">.GRAY</span>); </span><br><span class="line"><span class="selector-tag">textView</span><span class="selector-class">.setTextColor</span>(<span class="selector-tag">Color</span><span class="selector-class">.rgb</span>(255, 255, 255)); </span><br><span class="line"><span class="selector-tag">textView</span><span class="selector-class">.setTextColor</span>(<span class="selector-tag">Color</span><span class="selector-class">.parseColor</span>("<span class="selector-id">#FF0000</span>")); </span><br><span class="line"><span class="selector-tag">textView</span><span class="selector-class">.setTextColor</span>(<span class="selector-tag">getResources</span>()<span class="selector-class">.getColor</span>(<span class="selector-tag">R</span><span class="selector-class">.color</span><span class="selector-class">.colorPrimary</span>));</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;方法汇总&quot;&gt;&lt;a href=&quot;#方法汇总&quot; class=&quot;headerlink&quot; title=&quot;方法汇总:&quot;&gt;&lt;/a&gt;方法汇总:&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;方法一:&lt;/strong&gt;&lt;br&gt;xml文件内直接设置属性&lt;br&gt;&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+      <category term="Android开发" scheme="http://www.zikunfu.cn/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="前端" scheme="http://www.zikunfu.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Android" scheme="http://www.zikunfu.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android开发-toast字体大小，颜色修改,自定义</title>
+    <link href="http://www.zikunfu.cn/post/f6e983c1.html"/>
+    <id>http://www.zikunfu.cn/post/f6e983c1.html</id>
+    <published>2019-01-06T14:04:03.000Z</published>
+    <updated>2019-01-06T14:41:07.411Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h3><h4 id="中文介绍"><a href="#中文介绍" class="headerlink" title="中文介绍:"></a>中文介绍:</h4><p>Toast是Android中用来显示显示信息的一种机制，和Dialog不一样的是，Toast是没有焦点的，而且Toast显示的时间有限，过一定的时间就会自动消失。</p><h4 id="默认效果"><a href="#默认效果" class="headerlink" title="默认效果:"></a>默认效果:</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Toast</span><span class="selector-class">.makeText</span>(<span class="selector-tag">MainActivity</span><span class="selector-class">.this</span>, "默认<span class="selector-tag">Toast</span>样式",   <span class="selector-tag">Toast</span><span class="selector-class">.LENGTH_SHORT</span>)<span class="selector-class">.show</span>();</span><br></pre></td></tr></table></figure><p><img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fyx87g8dd8j308u07iaa6.jpg" alt=""></p><h4 id="自定义位置"><a href="#自定义位置" class="headerlink" title="自定义位置:"></a>自定义位置:</h4><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Toast toast = Toast.makeText<span class="comment">(MainActivity.this,"自定义位置Toast", Toast.LENGTH_LONG)</span>;</span><br><span class="line">toast.setGravity<span class="comment">(Gravity.CENTER, 0, 0)</span>; <span class="comment">// 设定出现的位置</span></span><br><span class="line">toast.show<span class="comment">()</span>;</span><br></pre></td></tr></table></figure><p><img src="http://wx2.sinaimg.cn/mw690/006zoO1wgy1fyx87glyo2j308n06mt8u.jpg" alt=""></p><h4 id="带图片效果"><a href="#带图片效果" class="headerlink" title="带图片效果:"></a>带图片效果:</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">toast = Toast.makeText(MainActivity.this,<span class="string">"带图片Toast"</span>, Toast.LENGTH_LONG)<span class="comment">;</span></span><br><span class="line">toast.setGravity(Gravity.CENTER, <span class="number">0</span>, <span class="number">0</span>)<span class="comment">;</span></span><br><span class="line">LinearLayout toastView = (LinearLayout) toast.getView()<span class="comment">;</span></span><br><span class="line">ImageView imageCodeProject = new ImageView(getApplicationContext())<span class="comment">;</span></span><br><span class="line">imageCodeProject.setImageResource(R.drawable.icon)<span class="comment">;</span></span><br><span class="line">toastView.<span class="keyword">addView(imageCodeProject, </span><span class="number">0</span>)<span class="comment">;</span></span><br><span class="line">toast.<span class="keyword">show();</span></span><br></pre></td></tr></table></figure><p><img src="http://wx1.sinaimg.cn/mw690/006zoO1wgy1fyx87h559yj308n06nq34.jpg" alt=""></p><h4 id="自定义效果"><a href="#自定义效果" class="headerlink" title="自定义效果:"></a>自定义效果:</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Toast toast =  Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"自定义效果"</span>, Toast.LENGTH_SHORT);</span><br><span class="line">toast.setGravity(Gravity.TOP, <span class="number">0</span>, <span class="number">200</span>);<span class="comment">// 设置出现位置</span></span><br><span class="line">TextView <span class="built_in">text</span> = <span class="keyword">new</span> TextView(MainActivity.<span class="keyword">this</span>);</span><br><span class="line"><span class="built_in">text</span>.setText(<span class="string">"自定义效果"</span>);<span class="comment">// 设置文本内容</span></span><br><span class="line"><span class="built_in">text</span>.setTextColor(getResources().getColor(R.color.white));<span class="comment">// 文本颜色</span></span><br><span class="line"><span class="built_in">text</span>.<span class="built_in">setTextSize</span>(<span class="number">30</span>);<span class="comment">// 文本字体大小</span></span><br><span class="line"><span class="built_in">text</span>.setWidth(<span class="number">300</span>);<span class="comment">// 设置toast的大小</span></span><br><span class="line"><span class="built_in">text</span>.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);<span class="comment">// 设置文本居中</span></span><br><span class="line"><span class="built_in">text</span>.setBackgroundColor(Color.rgb(<span class="number">64</span>,<span class="number">158</span>,<span class="number">255</span>));<span class="comment">// 设置背景颜色</span></span><br><span class="line">toast.setView(<span class="built_in">text</span>); <span class="comment">// 将文本插入到toast里</span></span><br><span class="line">toast.show();<span class="comment">// 展示toast</span></span><br></pre></td></tr></table></figure><p> <img src="http://wx3.sinaimg.cn/mw690/006zoO1wgy1fyx8llaituj30760csq2x.jpg" alt=""></p><h4 id="总结api"><a href="#总结api" class="headerlink" title="总结api:"></a>总结api:</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化一个toast</span></span><br><span class="line"><span class="selector-tag">Toast</span><span class="selector-class">.makeText</span>(MainActivity.this, <span class="string">"自定义效果"</span>, Toast.LENGTH_SHORT);</span><br><span class="line"><span class="comment">// 设置位置</span></span><br><span class="line"><span class="selector-tag">toast</span><span class="selector-class">.setGravity</span>(Gravity.TOP, <span class="number">0</span>, <span class="number">200</span>);</span><br><span class="line"><span class="comment">// 设置显示时长(只有两种2s和3.5s)</span></span><br><span class="line"><span class="comment">// Toast.LENGTH_LONG    默认显示3.5秒</span></span><br><span class="line"><span class="comment">// Toast.LENGTH_SHORT   默认显示2秒</span></span><br><span class="line"><span class="selector-tag">toast</span><span class="selector-class">.setDuration</span>(Toast.LENGTH_LONG);</span><br><span class="line"><span class="comment">// 设置控件</span></span><br><span class="line"><span class="selector-tag">toast</span><span class="selector-class">.setView</span>(text)</span><br><span class="line"><span class="comment">// 展示</span></span><br><span class="line"><span class="selector-tag">toast</span><span class="selector-class">.show</span>();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Toast&quot;&gt;&lt;a href=&quot;#Toast&quot; class=&quot;headerlink&quot; title=&quot;Toast&quot;&gt;&lt;/a&gt;Toast&lt;/h3&gt;&lt;h4 id=&quot;中文介绍&quot;&gt;&lt;a href=&quot;#中文介绍&quot; class=&quot;headerlink&quot; title=&quot;中文介绍:
+      
+    
+    </summary>
+    
+      <category term="Android开发" scheme="http://www.zikunfu.cn/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="前端" scheme="http://www.zikunfu.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Android" scheme="http://www.zikunfu.cn/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>WebStorm主题修改以及插件配置</title>
@@ -92,9 +196,9 @@
       <category term="Java开发" scheme="http://www.zikunfu.cn/categories/Java%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
-    
       <category term="编程语言" scheme="http://www.zikunfu.cn/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
     
   </entry>
   
@@ -119,9 +223,9 @@
       <category term="操作系统" scheme="http://www.zikunfu.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
-    
       <category term="编程语言" scheme="http://www.zikunfu.cn/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
     
       <category term="操作系统" scheme="http://www.zikunfu.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
@@ -175,9 +279,9 @@
       <category term="Java开发" scheme="http://www.zikunfu.cn/categories/Java%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
-    
       <category term="编程语言" scheme="http://www.zikunfu.cn/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
     
   </entry>
   
@@ -279,9 +383,9 @@
       <category term="Java开发" scheme="http://www.zikunfu.cn/categories/Java%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
-    
       <category term="编程语言" scheme="http://www.zikunfu.cn/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
     
   </entry>
   
@@ -306,9 +410,9 @@
       <category term="Java开发" scheme="http://www.zikunfu.cn/categories/Java%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
-    
       <category term="编程语言" scheme="http://www.zikunfu.cn/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Java" scheme="http://www.zikunfu.cn/tags/Java/"/>
     
   </entry>
   
@@ -445,54 +549,6 @@
       <category term="前端" scheme="http://www.zikunfu.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="hexo主题" scheme="http://www.zikunfu.cn/tags/hexo%E4%B8%BB%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-next主题博客背景修改</title>
-    <link href="http://www.zikunfu.cn/post/9bf7a4e1.html"/>
-    <id>http://www.zikunfu.cn/post/9bf7a4e1.html</id>
-    <published>2018-11-24T11:33:17.000Z</published>
-    <updated>2018-11-25T04:42:14.729Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h4><p>博客路径<strong>MySelfBlog/themes/next/source/css/_custom/custom.styl</strong>找到对应的custom.styl文件，修改添加<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(/images/bg1.png);</span><br><span class="line">    <span class="attribute">background-size</span>:cover;</span><br><span class="line">    <span class="attribute">background-repeat</span>:no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">    <span class="attribute">background-position</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>url括号中的 <strong>(/images/bg.jpg)</strong> 对应着你所需要放置的背景图片，路径形式是相对于 <strong>themes/next/source</strong> 为根目录的路径，例如我的背景图片放置在 <strong>themes/next/source/images/bg1.png</strong> ,那么我对应的就是上面的路径，根据你们自己的路径填写正确即可。</p><h4 id="其他区域相应修改-不一定需要，看个人"><a href="#其他区域相应修改-不一定需要，看个人" class="headerlink" title="其他区域相应修改(不一定需要，看个人)"></a>其他区域相应修改(不一定需要，看个人)</h4><p>以上修改成功后，可能发现就像下面这样<br><img src="/post/9bf7a4e1/background1.png" title="丑陋的博客"><br>那么这个时候我们肯定是不能忍受的，那么我的选择是将文章板块，以及下方的评论系统的背景色调修改成原先的白色底色，这样才能获得一个单独修改背景图片的博客页面。修改的部分在我们原先的路径,<strong>themes/next/source/css/_custom/custom.styl</strong>处修改为：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">1200px</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加背景图</span></span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background-image</span>:url(/images/bg1.png);</span><br><span class="line">      <span class="attribute">background-size</span>:cover;</span><br><span class="line">      <span class="attribute">background-repeat</span>:no-repeat;</span><br><span class="line">      <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">      <span class="attribute">background-position</span>:center;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 修改文章的背景色和透明度</span></span><br><span class="line">  <span class="selector-class">.post</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 修改评论系统的背景色和透明度</span></span><br><span class="line">  <span class="selector-class">.comments</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p><p> 这样修改完了，我们就能看到博客页面成功的恢复成了我们所期望的样子，如下:<br> <img src="/post/9bf7a4e1/background2.png" title="美化的博客"><br> 如果读者发现自己的博客修改后还有部分板块颜色被背景色同化，那么可以自己F12或者在那个板块下审查元素，寻找对应板块的名称，自己去在custom.styl文件中设置该区域的背景色。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;添加背景图&quot;&gt;&lt;a href=&quot;#添加背景图&quot; class=&quot;headerlink&quot; title=&quot;添加背景图&quot;&gt;&lt;/a&gt;添加背景图&lt;/h4&gt;&lt;p&gt;博客路径&lt;strong&gt;MySelfBlog/themes/next/source/css/_custom/cust
-      
-    
-    </summary>
-    
-      <category term="hexo-next配置" scheme="http://www.zikunfu.cn/categories/hexo-next%E9%85%8D%E7%BD%AE/"/>
-    
-    
-      <category term="前端" scheme="http://www.zikunfu.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="hexo主题" scheme="http://www.zikunfu.cn/tags/hexo%E4%B8%BB%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.zikunfu.cn/post/4a17b156.html"/>
-    <id>http://www.zikunfu.cn/post/4a17b156.html</id>
-    <published>2018-11-16T04:09:29.161Z</published>
-    <updated>2018-11-24T05:36:37.808Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   

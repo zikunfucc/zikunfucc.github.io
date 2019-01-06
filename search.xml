@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android开发-@id与@+id之间的区别]]></title>
+    <url>%2Fpost%2F673e21fa.html</url>
+    <content type="text"><![CDATA[问题:经常能看到布局里出现@id和@+id,但是不是很清楚之间的区别，然后就基本上使用@+id也能解决问题，所以一直没去搞清楚它们的差别，今天特意找了下，写篇文章记录下。 解析:@+id就是在R.java文件里新增一个id名称，如果之前已经存在相同的id名称，那么会覆盖之前的名称。@id则是直接引用R.java文件的存在的id资源，如果不存在，会编译报错。 总结:不建议在已存在某id的时候再在布局中使用@+id，虽然暂时这是被允许的，但是这种写法并不规范，在后续的android版本中可能被禁止这种写法。 简单讲讲，其实在布局里，除了申明控件的id使用@+id/外，其余的引用控件最好使用@id，这样符合代码规范，也可以节约编译的时间，避免R.java文件无用的写入。]]></content>
+      <categories>
+        <category>Android开发</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android开发-使用xml中的array资源]]></title>
+    <url>%2Fpost%2Ff3ee8788.html</url>
+    <content type="text"><![CDATA[创建array资源:在value目录下创建arrays.xml文件,然后我们在arrays.xml文件中使用string-array或者integer-array标签定义数组：123456789101112131415&lt;resources&gt; &lt;string-array name="citys"&gt; &lt;item&gt;上海&lt;/item&gt; &lt;item&gt;北京&lt;/item&gt; &lt;item&gt;成都&lt;/item&gt; &lt;item&gt;广州&lt;/item&gt; &lt;item&gt;深圳&lt;/item&gt; &lt;/string-array&gt; &lt;integer-array name="nums" translatable="false"&gt; &lt;item&gt;1&lt;/item&gt; &lt;item&gt;2&lt;/item&gt; &lt;item&gt;3&lt;/item&gt; &lt;/integer-array&gt;&lt;/resources&gt; 引用array资源:Java文件中引用:123Resources res =getResources();String[] citys = res.getStringArray(R.array.citys);String[] nums = res.getIntArray(R.array.nums); Xml文件中引用:123456&lt;Spinner android:id="@+id/spinner1" android:layout_width="match_parent" android:layout_height="wrap_content" android:entries="@array/languages" /&gt;]]></content>
+      <categories>
+        <category>Android开发</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android开发-setTextColor的多种方法]]></title>
+    <url>%2Fpost%2Fa826ad8d.html</url>
+    <content type="text"><![CDATA[方法汇总:方法一:xml文件内直接设置属性1&lt;android:TextColor="#FFFFFF"/&gt; 方法二:在java文件中引用控件，使用setTextColor方法12345textView.setTextColor(0xFFFFFF);textView.setTextColor(Color.GRAY); textView.setTextColor(Color.rgb(255, 255, 255)); textView.setTextColor(Color.parseColor("#FF0000")); textView.setTextColor(getResources().getColor(R.color.colorPrimary));]]></content>
+      <categories>
+        <category>Android开发</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android开发-toast字体大小，颜色修改,自定义]]></title>
+    <url>%2Fpost%2Ff6e983c1.html</url>
+    <content type="text"><![CDATA[Toast中文介绍:Toast是Android中用来显示显示信息的一种机制，和Dialog不一样的是，Toast是没有焦点的，而且Toast显示的时间有限，过一定的时间就会自动消失。 默认效果:1Toast.makeText(MainActivity.this, "默认Toast样式", Toast.LENGTH_SHORT).show(); 自定义位置:123Toast toast = Toast.makeText(MainActivity.this,"自定义位置Toast", Toast.LENGTH_LONG);toast.setGravity(Gravity.CENTER, 0, 0); // 设定出现的位置toast.show(); 带图片效果:1234567toast = Toast.makeText(MainActivity.this,"带图片Toast", Toast.LENGTH_LONG);toast.setGravity(Gravity.CENTER, 0, 0);LinearLayout toastView = (LinearLayout) toast.getView();ImageView imageCodeProject = new ImageView(getApplicationContext());imageCodeProject.setImageResource(R.drawable.icon);toastView.addView(imageCodeProject, 0);toast.show(); 自定义效果:1234567891011Toast toast = Toast.makeText(MainActivity.this, "自定义效果", Toast.LENGTH_SHORT);toast.setGravity(Gravity.TOP, 0, 200); // 设置出现位置TextView text = new TextView(MainActivity.this);text.setText("自定义效果"); // 设置文本内容text.setTextColor(getResources().getColor(R.color.white)); // 文本颜色text.setTextSize(30); // 文本字体大小text.setWidth(300); // 设置toast的大小text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER); // 设置文本居中text.setBackgroundColor(Color.rgb(64,158,255)); // 设置背景颜色toast.setView(text); // 将文本插入到toast里toast.show(); // 展示toast 总结api:123456789101112// 初始化一个toastToast.makeText(MainActivity.this, "自定义效果", Toast.LENGTH_SHORT);// 设置位置toast.setGravity(Gravity.TOP, 0, 200);// 设置显示时长(只有两种2s和3.5s)// Toast.LENGTH_LONG 默认显示3.5秒// Toast.LENGTH_SHORT 默认显示2秒toast.setDuration(Toast.LENGTH_LONG);// 设置控件toast.setView(text)// 展示toast.show();]]></content>
+      <categories>
+        <category>Android开发</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WebStorm主题修改以及插件配置]]></title>
     <url>%2Fpost%2Fe8975f07.html</url>
     <content type="text"><![CDATA[WebStorm主题修改已有主题修改:在File-&gt;Settings-&gt;Color Scheme中可以选择已有的部分主题进行修改。 外部主题修改:主题网站在网站中找到了自己喜欢的主题后，下载jar文件，然后在WebStorm中点击File-&gt;Import Settings 选用刚才下载的jar文件，导入主题就哦了。 WebStorm插件配置1.Material Theme UI一个主题类的插件，可以修改界面颜色，代码颜色，文件图标什么的，感觉安装这个了之后比自己修改的主题方便多了，而且也蛮好看的。 效果: 2.CodeGlance这个插件可以让WebStorm拥有右侧的代码缩略图，方便我们快速的滑动代码，类似于Sublime。 效果: 3.eslint这个插件是语法检查的，剩下的不用多说了吧。 4.activate-power-mode安装之后可以在 window -&gt; activate-power-mode 中关闭震动以及开启彩色模式。 1234可用 enable // 设置是否启用抖动 shake // 设置是否抖动粒子 particle // 设置是否有粒子飞溅组合 combo // 设置是否输入多于一定数量才开始出现效果 注释:默认配置下，每次都得输入到多少个单词后才会有效果触发,还有一个非常讨厌的图标。 我们在这个页面设置修改如下::]]></content>
@@ -32,8 +78,8 @@
         <category>Java开发</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>编程语言</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +90,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>编程语言</tag>
+        <tag>Java</tag>
         <tag>操作系统</tag>
       </tags>
   </entry>
@@ -69,8 +115,8 @@
         <category>Java开发</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>编程语言</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -115,8 +161,8 @@
         <category>Java开发</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>编程语言</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -127,8 +173,8 @@
         <category>Java开发</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>编程语言</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
